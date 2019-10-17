@@ -1,0 +1,62 @@
+#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
+# System Fonts
+,ttf-inconsolata,"Monospace font of I3."
+,ttf-linux-libertine,"Sans and serif fonts for Linux."
+A,nerd-fonts-terminus,"Fonts for Terminal & Polybar" 
+# Basic System blocks
+,xset,"User preference utility for X"
+,xf86-video-nouveau,"Open Source 3D acceleration driver for nVidia cards"
+,mesa,"An open-source implementation of the OpenGL specification"
+,xorg-server,"Graphical server."
+,xorg-xinit,"Starts the graphical server."
+,xorg-xprop,"is a tool for detecting window properties."
+,xdotool,"provides window action utilities on the command line."
+,xorg-xdpyinfo,"aids with resolution determination and screen recording."
+,xorg-xbacklight,"enables changing screen brightness levels."
+,networkmanager,"does exactly what it sounds like."
+,pulseaudio,"is the audio system (>inb4 bloat)."
+,pulsemixer,"is an intuitive ncurses audio controller."
+,gnome-keyring,"serves as the system keyring."
+,arandr,"is a UI for screen adjustment."
+# Basic Desktop Functionality
+A,compton-tryone-git,"tryone's patched fork of compton with kawase blur"
+,i3-gaps,"Window manager."
+A,polybar,"A fast and easy-to-use status bar"
+,libnotify,"allows desktop notifications."
+,dunst,"is a suckless notification system."
+,feh,"Fast and light imlib2-based image viewer"
+A,unclutter-xfixes-git,"hides an inactive mouse."
+,xcape,"gives the special escape/super mappings of LARBS."
+A,python-pywal,"colour scheme and wallpaper manipulation tool"
+# System tools
+,sed,"GNU stream editor"
+,pacman-contrib,"Contributed scripts and tools for pacman systems(reflector)"
+A,st-luke-git,"Luke's Smith St compile version"
+,unrar,"extracts rar's."
+,unzip,"unzips zips."
+,xclip,"allows for copying and pasting from the command line."
+,reflector,"Script which can retrieve the latest mirror list from the MirrorStatus page"
+,python-pip,"The PyPA recommended tool for installing Python packages"
+,npm,"Npm package Manager"
+,imagemagick,"is a terminal image-manipulator providing some convenient shortcuts and the lockscreen in LARBS."
+,w3m,"is a terminal browser which can also view images."
+,fzf,"is a fuzzy finder tool."
+,dmenu,"runs commands and provides a UI for selection."
+# Basic Apps
+,firefox,"Standalone web browser from mozilla.org"
+,ranger,"Terminal file manager."
+,sxiv,"is a minimalist image viewer."
+,ffmpeg,"can record and splice video and audio on the command line."
+,gvim,"vim with some useful features"
+,mpv,"is the patrician's choice video/gif player."
+,maim,"can take quick screenshots at your request."
+,youtube-dl,"can download any YouTube video (or playlist or channel) when given the link."
+,zathura,"is a pdf viewer with vim-like bindings."
+,zathura-pdf-mupdf,"allows mupdf pdf compatibility in zathura."\
+,cmus,"Small, fast and powerful console music player"
+A,spotify,"Music Streamming Service"
+# Otrhers
+,nodejs,"Nodejs Plataform"
+
+
+

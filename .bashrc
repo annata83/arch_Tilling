@@ -16,5 +16,5 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias dots='/usr/bin/git --git-dir=$HOME/.config/dots --work-tree=$HOME'
+alias dots='/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME'
 
