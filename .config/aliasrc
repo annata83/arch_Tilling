@@ -1,0 +1,34 @@
+#!/bin/sh
+alias ka="killall" \
+	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
+	magit="nvim -c Magit" \
+	p="sudo pacman" \
+	SS="sudo systemctl" \
+	g="git" \
+	trem="transmission-remote" \
+	e="$EDITOR" \
+	v="$EDITOR --servername "desktop2" --remote $1 " \
+	vl="vim --serverlist" \
+	x="sxiv -ft *" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
+	yta="yt -x -f bestaudio/best" \
+	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
+	lsp="pacman -Qett --color=always | less" \
+	ffmpeg="ffmpeg -hide_banner" \
+	l="ls -l" \
+	la="ls -a" \
+	lla="ls -la" \
+	lt="ls --tree"\
+	duns="waltemplates.sh"\
+	dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"'\
+	Spr="source ~/.profile"
+
+#command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
+
+shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}
+se() { du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDITOR ;}
+sv() { vcopy "$(du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf)" ;}
+vf() { fzf | xargs -r -I % $EDITOR % ;}

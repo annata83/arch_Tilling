@@ -1,0 +1,59 @@
+[global]
+    frame_width = 1;
+    frame_color = "#788388"    
+    font = Terminess 12
+    markup = yes
+    format = "%s %p\n%b"    
+    sort = yes
+    indicate_hidden = yes
+    alignment = left
+    bounce_freq = 5
+    show_age_threshold = 60
+    word_wrap = no
+    ignore_newline = no
+    geometry = "500x4-25+25"
+    width = 50, 500 #  min, max, respectively
+    shrink = no
+    transparency = 5
+    idle_threshold = 120 
+    monitor = 0
+    follow = mouse 
+    sticky_history = yes
+    history_length = 20
+    show_indicators = yes
+    line_height = 0
+    separator_height = 1
+    padding = 20
+    horizontal_padding = 10
+    separator_color = #263238
+    startup_notification = false
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = chromium
+    icon_position = left
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+    max_icon_size=128
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+
+    # IMPORTANT: colors have to be defined in quotation marks.
+    # Otherwise the "#" and following would be interpreted as a comment.
+    background = "#0A1A25"
+    foreground = "#B5B967"
+    timeout = 3
+
+[urgency_normal]
+    background = "#0A1A25"
+    foreground = "#F9FAF9"
+    timeout = 5
+
+[urgency_critical]
+    background = "#0A1A25"
+    foreground = "#F9FAF9"
+    timeout = 0
+
