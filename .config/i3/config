@@ -1,16 +1,20 @@
+
+#######################################
+#######################################
 # vim: filetype=i3
 # i3 config file (v4)
+#######################################
+#######################################
 
-#--------- i3 Main Settings
 
-# This config file will use environmental variables such as $BROWSER and $TERMINAL.
-# You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
-#
-# export FILE="ranger"
-# export TERMINAL="st"
+#######################################
+# #---I3 System Fonts---# #
+#######################################
+font pango:Iconsolata 10 
 
+#######################################
 # #---Basic Definitions---# #
-
+#######################################
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $sup Mod1
@@ -19,110 +23,6 @@ set $shutdown sudo -A shutdown -h now
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
-
-font pango:Iconsolata 10 
-
-
-# Bindings to make the webcam float and stick.
-for_window [title="mpvfloat"] floating enable
-for_window [title="mpvfloat"] sticky enable
-for_window [title="mpvfloat"] border pixel 0
-no_focus [title="mpvfloat"]
-
-
-# #---Playerctl---# #
-
-# playerctl controls
-bindsym $mod+Prior exec --no-startup-id playerctl next 
-bindsym $mod+Next exec --no-startup-id playerctl previous 
-bindsym $mod+End exec --no-startup-id playerctl play-pause
-
-# #---StartUps---# #
-
-# Starts dunst for notifications:
-
-exec --no-startup-id ~/.scripts/apps/waltemplates.sh
-exec --no-startup-id dunst
-
-# Composite manager:
-exec --no-startup-id compton --backend glx --blur-background --blur-method kawase --blur-strength 10
-# Runs the key remapping scripts
-#exec --no-startup-id remaps
-# Unclutter makes the mouse invisible after a brief period
-exec --no-startup-id unclutter
-# Podboat automatic queue and download
-#exec_always --no-startup-id podentr
-# Set Urxvt as upwards terminal
-#exec --no-startup-id urxvt
-
-# #---Starting System commands---# #
-
-# Hide scratchpad
-exec --no-startup-id scratchpad show
-
-# Turnoff Xserver screensaver
-#exec_always --no-startup-id ~/.scripts/i3cmds/screenoff
-# Launch polybar 
-#bindsym $mod+p 			exec --no-startup-id $HOME/.config/polybar/launch.sh
-#bindsym $mod+Shift+p 		exec --no-startup-id killall -q polybar
-
-
-
-
-
-# #---Basic Configuration---# #
-# st
-bindsym $mod+Return 			exec $term
-# vim 
-bindsym $mod+v 						exec $term -e $EDITOR 
-
-bindsym $mod+Shift+Return	exec --no-startup-id samedir
-# Ranger
-bindsym $mod+r 			exec $term -e $FILE
-# dmenu
-bindsym $mod+d						exec ~/.scripts/apps/dmen.sh 
-# xlunch
-
-
-# Show selection (xclip)
-bindsym $mod+Insert				exec --no-startup-id showclip
-# i3lock
-#bindsym $mod+9 						exec ~/.scripts/i3cmds/lock
-
-
-# Testing my Skeys app keymap 
-#bindsym $sup+F1 					exec --no-startup-id surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css
-#bindsym $sup+t 						exec --no-startup-id surf http://localhost:8080/
-
-# #---Function Buttons---# #
-
-# Shortcut Help
-#bindsym $mod+F1		exec $term -e $HELP
-#bindsym $mod+F1 		exec surf ~/.config/shortcuts/i3shortcuts.html
-# Restart I3
-bindsym $mod+F2		restart
-# Moltimonitor selector if any
-bindsym $mod+F3		exec --no-startup-id displayselect
-# Hibernation
-bindsym $mod+F4		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
-# Refresh network
-bindsym $mod+F5		exec --no-startup-id $netrefresh
-# Puse Mixer
-bindsym $mod+F6		exec --no-startup-id $term -e pulsemixer
-#bindsym $mod+F7		exec --no-startup-id td-toggle
-#bindsym $mod+F8		exec --no-startup-id ~/.config/mutt/etc/mailsync.sh
-bindsym $mod+F9		exec --no-startup-id dmenumount
-bindsym $mod+F10	exec --no-startup-id dmenuumount
-bindsym $mod+F11	exec --no-startup-id camtoggle
-bindsym $mod+F12	exec $term -e nmtui
-
-
-# For screenshots and recording
-bindsym Home 			exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
-bindsym Shift+Home 		exec --no-startup-id maimpick
-
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
 
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
@@ -139,69 +39,6 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-
-#--------- Windows settings
-
-#---------Borders
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window none
-new_float none
-
-# Hide borders
-hide_edge_borders both
-
-# change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 2
-bindsym $mod+i border normal
-
-
-
-# Use Mouse+$mod to drag floating windows
-floating_modifier $mod
-
-# Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# Move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# Kill focused window
-bindsym $mod+Shift+q kill
-
-# Focus the parent container
-bindsym $mod+a focus parent
-
-# Alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# Alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# Toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# Toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-
-# Toggle sticky
-bindsym $mod+Shift+s sticky toggle
-
-# Resize window (you can also use the mouse for that)
-bindsym $mod+Shift+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
         # Pressing left will shrink the windowÃ¢â‚¬â„¢s width.
@@ -223,137 +60,11 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-# Floating to bottom
-bindsym $mod+Ctrl+l floating toggle; sticky toggle; exec --no-startup-id bottomright 
-bindsym $mod+Ctrl+h 	floating toggle; sticky toggle; exec --no-startup-id bottomleft
 
-
-
-#-------- Layout & scratchpad
-
-# Split orientation
-bindsym $mod+q split toggle
-
-# Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
-
-# Workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
-
-# Navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-
-#-------- Workspace settings
-
-# To display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:Ã¯â€šÂ¬
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
-
-# Switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-
-# Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-
-# Move to workspace with focused container
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-
-# Switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
-
-# Open specific applications in floating mode
-
-
-for_window [title="File Transfer*"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Pinentry"] sticky enable
-for_window [class="sent"] border pixel 0px
-for_window [window_role="GtkFileChooserDialog"] resize set 800 600
-for_window [window_role="GtkFileChooserDialog"] move position center
-for_window [title="Shortcuts"] floating toggle; resize set 1450 850; move position center border none
-for_window [class="URxvt"] move scratchpad, move position 80 537, resize set 1450 368  
-
-
-
-
-
-# define gaps either globally or per workspace using the following syntax. 
-# gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
-# workspace <ws> gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
-# WORKING OVER HERE!!
-# gaps workspace ws$2 gaps inner 15 outer 15
-
-
-# GAPS
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
-# gaps inner all set 15
-# gaps outer all plus 5
-
-# Needed for always using-gaps
-for_window [class="^.*"] border none
-gaps inner 0
-gaps outer 0
-
-
-# Smart gaps (gaps used if only more than one container on the workspace)
-#smart_gaps on
-
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
-# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-#smart_borders on
-# Turn off current Gaps
-bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
-bindsym $mod+shift+g		gaps inner current set 15; gaps outer current set 15
-
-# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+g mode "$mode_gaps"
+
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
@@ -385,47 +96,286 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+#######################################
+# #---Run at start  scrips---# #
+#######################################
+#####		Dunst Notifications         
+exec --no-startup-id ~/.scripts/apps/launchDunst.sh
+#####		Composite manager                      
+exec --no-startup-id ~/.scripts/apps/launchCompton.sh
+#####		Polybar       
+exec --no-startup-id $HOME/.scripts/apps/launchPolybar.sh        		 
+bindsym $mod+p 			exec --no-startup-id $HOME/.scripts/apps/launchPolybar.sh
+#####		Keyboard Keys custom changes
+exec --no-startup-id remaps
+#####		Invisible mouse under unused timeframe.                
+exec --no-startup-id unclutter
 
-# Pywal
- 
-# Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
-# from the generated scheme.
-# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
-# it fails to get colors from Xresources.
-set_from_resource $fg i3wm.background #f0f0f0
-set_from_resource $bg i3wm.foreground #f0f0f0
-
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-client.background       $bg
-
-
-
+#######################################
+# #---Startup commands---# #
+#######################################
+# Hide scratchpad
+exec --no-startup-id scratchpad show
 # Wal
 exec --no-startup-id wal -R
 
-# Polybar
+#######################################
+# #---Startup Apps---# #
+#######################################
+# Set Urxvt as upwards terminal
+exec --no-startup-id urxvt
 
-# Launch polybar at startup time
-exec_always --no-startup-id $HOME/.config/polybar/launchPolybar.sh
+#######################################
+# #---Kill Commands---# #
+#######################################
+# Kill Polybar
+bindsym $mod+Shift+p 		exec --no-startup-id killall -q polybar
+# Kill Compton
+bindsym $mod+Shift+c 		exec killall -q compton
+# Kill focused window
+bindsym $mod+Shift+q kill
 
+#######################################
+# #--- BINDINGS---# #
+#######################################
+# St
+bindsym $mod+Return 			exec $term
+# Vim 
+bindsym $mod+v 						exec $term -e $EDITOR 
+# Ranger
+bindsym $mod+r 			exec $term -e $FILE
+# dmenu
+bindsym $mod+d						exec ~/.scripts/apps/dmen.sh 
+# Show selection (xclip)
+bindsym $mod+Insert				exec --no-startup-id showclip
+# i3lock
+bindsym $mod+9 						exec i3lock-fancy -t "Do it"
+bindsym $mod+c 						exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
+# Testing my Skeys app keymap 
+#bindsym $sup+F1 					  exec --no-startup-id surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css
+#bindsym $sup+t 						exec --no-startup-id surf http://localhost:8080/
 
-# Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000
+#######################################
+# #---Function Buttons---# #
+#######################################
+# Shortcut Help
+#bindsym $mod+F1		exec $term -e $HELP
+#bindsym $mod+F1 		exec surf ~/.config/shortcuts/i3shortcuts.html
+# Restart I3
+bindsym $mod+F2		restart
+# Moltimonitor selector if any
+bindsym $mod+F3		exec --no-startup-id displayselect
+# Hibernation
+bindsym $mod+F4		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
+# Refresh network
+bindsym $mod+F5		exec --no-startup-id $netrefresh
+# Puse Mixer
+bindsym $mod+F6		exec --no-startup-id $term -e pulsemixer
+#bindsym $mod+F7		exec --no-startup-id td-toggle
+#bindsym $mod+F8		exec --no-startup-id ~/.config/mutt/etc/mailsync.sh
+bindsym $mod+F9		exec --no-startup-id dmenumount
+bindsym $mod+F10	exec --no-startup-id dmenuumount
+bindsym $mod+F11	exec --no-startup-id camtoggle
+bindsym $mod+F12	exec $term -e nmtui
 
-  client.background       #2B2C2B
+#######################################
+# #--- I3 MODES ---#
+#######################################
+# Mode Gaps
+bindsym $mod+g mode "$mode_gaps"
+# Set shut down, restart and locking features
+bindsym $mod+0 mode "$mode_system"
+# Resize window (you can also use the mouse for that)
+bindsym $mod+Shift+r mode "resize"
 
+#######################################
+# #--- screenshots and recording ---# #
+#######################################
+bindsym Home 			exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
+bindsym Shift+Home 		exec --no-startup-id maimpick
+
+#######################################
+#######################################
+#######################################
+###-------  Windows settings -------###
+#######################################
+#######################################
+#######################################
+
+#######################################
+# #--- Borders---# #
+#######################################
+# Configure border style <normal|1pixel|pixel xx|none|pixel>
+new_window none
+new_float none
+# Hide borders
+hide_edge_borders both
+# change borders
+bindsym $mod+u border none
+bindsym $mod+y border pixel 2
+bindsym $mod+i border normal
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# Focus the parent container
+bindsym $mod+a focus parent
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# Toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+# Toggle sticky
+bindsym $mod+Shift+s sticky toggle
+# Floating to bottom
+bindsym $mod+Ctrl+l floating toggle; sticky toggle; exec --no-startup-id bottomright 
+bindsym $mod+Ctrl+h 	floating toggle; sticky toggle; exec --no-startup-id bottomleft
+
+######################################
+######################################
+######################################
+# #---  Layout & scratchpad ---# #
+######################################
+######################################
+######################################
+# Split orientation
+bindsym $mod+q split toggle
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+# Workspace back and forth (with/without active container)
+workspace_auto_back_and_forth yes
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+# Navigate workspaces next / previous
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+#######################################
+#######################################
+#######################################
+# #---  Workspace settings ---#
+#######################################
+#######################################
+#######################################
+# To display names or symbols instead of plain workspace numbers you can use
+# something like: set $ws1 1:mail
+#                 set $ws2 2:Ã¯â€šÂ¬
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+# Switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+#######################################
+#######################################
+#######################################
+# #---Specific applications Settings -#
+#######################################
+#######################################
+#######################################
+# For class
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Pinentry"] sticky enable
+for_window [class="sent"] border pixel 0px
+for_window [class="URxvt"] move scratchpad, move position 80 537, resize set 1450 368  
+# For Title
+for_window [title="Shortcuts"] floating toggle; resize set 1450 850; move position center border none
+for_window [title="File Transfer*"] floating enable
+# For Role
+for_window [window_role="GtkFileChooserDialog"] resize set 800 600
+for_window [window_role="GtkFileChooserDialog"] move position center
+
+#######################################
+# #--- GAPS ---#
+#######################################
+# Needed for always using-gaps
+for_window [class="^.*"] border none
+gaps inner 0
+gaps outer 0
+# Turn off current Gaps
+bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+bindsym $mod+shift+g		gaps inner current set 15; gaps outer current set 15
+
+########################################
+#                Pywal
+########################################
+###--- i3 coloring ---###
+# Make it clear when failed using red - otherwise set i3 colors with wal from xresources
+set_from_resource $bg           i3wm.color0 #ff0000
+set_from_resource $bg-alt       i3wm.color14 #ff0000
+set_from_resource $fg           i3wm.color15 #ff0000
+set_from_resource $fg-alt       i3wm.color2 #ff0000
+set_from_resource $hl           i3wm.color13 #ff0000
+# class                 border      backgr. text indicator      child_border
+client.focused          $fg-alt     $bg     $hl  $fg-alt        $hl
+client.focused_inactive $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.unfocused        $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.urgent           $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.placeholder      $fg-alt     $bg     $fg  $fg-alt        $fg-alt
+client.background       $bg
+
+#######################################
 # #---Extra XF86 Keys---# #
+#######################################
 # These are the extra media keys that some keyboards have.
 # Audio
 bindsym XF86AudioMute		exec --no-startup-id lmc mute
@@ -435,7 +385,6 @@ bindsym Shift+XF86AudioLowerVolume	exec --no-startup-id lmc down 10
 bindsym Shift+XF86AudioRaiseVolume	exec --no-startup-id lmc up 10
 bindsym Control+XF86AudioLowerVolume	exec --no-startup-id lmc down 1
 bindsym Control+XF86AudioRaiseVolume	exec --no-startup-id lmc up 1
-
 # Power Bottom
 bindsym XF86PowerOff		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 # Web
@@ -443,7 +392,6 @@ bindsym XF86HomePage		exec $BROWSER
 # Mail
 bindsym XF86Mail		exec $term 
 bindsym XF86TouchpadToggle	exec --no-startup-id toggletouchpad
-
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
