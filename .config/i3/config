@@ -149,18 +149,16 @@ bindsym $mod+d						exec ~/.scripts/apps/dmen.sh
 # Show selection (xclip)
 bindsym $mod+Insert				exec --no-startup-id showclip
 # i3lock
-bindsym $mod+9 						exec i3lock-fancy -t "Do it"
+bindsym $mod+9 						exec i3lock-fancy -t ""
 bindsym $mod+c 						exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
 # Testing my Skeys app keymap 
-#bindsym $sup+F1 					  exec --no-startup-id surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css
-#bindsym $sup+t 						exec --no-startup-id surf http://localhost:8080/
+bindsym $sup+t 						exec --no-startup-id surf http://localhost:8080/
 
 #######################################
 # #---Function Buttons---# #
 #######################################
 # Shortcut Help
-#bindsym $mod+F1		exec $term -e $HELP
-#bindsym $mod+F1 		exec surf ~/.config/shortcuts/i3shortcuts.html
+bindsym $mod+F1		exec --no-startup-id surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css
 # Restart I3
 bindsym $mod+F2		restart
 # Moltimonitor selector if any
@@ -193,6 +191,13 @@ bindsym $mod+Shift+r mode "resize"
 #######################################
 bindsym Home 			exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
 bindsym Shift+Home 		exec --no-startup-id maimpick
+
+#######################################
+# #--- PlayerCtl Controls --# #
+######################################
+bindsym $mod+Prior exec --no-startup-id playerctl next 
+bindsym $mod+Next exec --no-startup-id playerctl previous 
+bindsym $mod+End exec --no-startup-id playerctl play-pause
 
 #######################################
 #######################################
@@ -340,6 +345,7 @@ for_window [class="URxvt"] move scratchpad, move position 80 537, resize set 145
 # For Title
 for_window [title="Shortcuts"] floating toggle; resize set 1450 850; move position center border none
 for_window [title="File Transfer*"] floating enable
+for_window [title="nmtui"] floating enable
 # For Role
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
