@@ -9,7 +9,7 @@
 - **Terminal multiplexer:** [tmux](https://wiki.archlinux.org/index.php/Tmux)  
 - **WM:** [i3-gaps](https://github.com/Airblader/i3)  
 - **Bar:** [polybar](https://wiki.archlinux.org/index.php/Polybar)  
-- **Launcher:** [xlunch](http://xlunch.org/)  
+- **Launcher:** [rofi](https://wiki.archlinux.org/index.php/Rofi/)  
 - **Text editor:** [neovim](https://wiki.archlinux.org/index.php/Neovim ) 
 - **Notification daemon:** [dunst](https://github.com/dunst-project/dunst)  
 - **File manager:** [ranger](https://wiki.archlinux.org/index.php/Ranger)  

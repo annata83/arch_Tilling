@@ -204,5 +204,3 @@ endfunction
 "Move bettwen buffers                   
 :nnoremap <C-m> :bnext<CR>  
 :nnoremap <C-b> :bprevious<CR>
-
-

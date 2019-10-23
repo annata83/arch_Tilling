@@ -29,6 +29,8 @@ A,unclutter-xfixes-git,"hides an inactive mouse."
 ,xcape,"gives the special escape/super mappings of LARBS."
 A,python-pywal,"colour scheme and wallpaper manipulation tool"
 # System tools
+,zsh,"A very advanced and programmable command interpreter (shell) for UNIX"
+G,https://github.com/robbyrussell/oh-my-zsh,"A community-driven framework for managing your zsh configuration"
 ,sed,"GNU stream editor"
 ,pacman-contrib,"Contributed scripts and tools for pacman systems(reflector)"
 A,st-luke-git,"Luke's Smith St compile version"
@@ -57,6 +59,9 @@ A,st-luke-git,"Luke's Smith St compile version"
 A,spotify,"Music Streamming Service"
 # Otrhers
 ,nodejs,"Nodejs Plataform"
+,man-db,"A utility for reading man pages"
+P,ueberzug,"alternative for w3mimgdisplay "
+A,i3lock-fancy,"I3Lock with Blur and fancies"
 
 ### Unused for now  
 #,ttf-font-awesome,"Fonts for Polybar Icons"

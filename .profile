@@ -11,13 +11,12 @@ export READER="zathura"
 export FILE="ranger"
 
 
-export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 #export HELP="lynx ~/.config/shortcuts/i3shortcuts.html"
 export HELP="surf ~/.config/shortcuts/i3shortcuts.html"
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+#export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # less/man colors
 export LESS=-R
