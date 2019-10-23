@@ -15,24 +15,25 @@ font pango:Iconsolata 10
 #######################################
 # #---Basic Definitions---# #
 #######################################
-set $term --no-startup-id $TERMINAL
+set $nsi --no-startup-id
+set $term $nsi $TERMINAL
 set $mod Mod4
 set $sup Mod1
-set $stoprec --no-startup-id dmenurecord kill
+set $stoprec $nsi dmenurecord kill
 set $shutdown sudo -A shutdown -h now
-set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
+set $netrefresh $nsi sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
 
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/.scripts/i3cmds/i3exit lock, mode "default"
-    bindsym s exec --no-startup-id ~/.scripts/i3cmds/i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id ~/.scripts/i3cmds/i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id ~/.scripts/i3cmds/i3exit logout, mode "default"
-    bindsym h exec --no-startup-id ~/.scripts/i3cmds/i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/.scripts/i3cmds/i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec $nsi ~/.scripts/i3cmds/i3exit lock, mode "default"
+    bindsym s exec $nsi ~/.scripts/i3cmds/i3exit suspend, mode "default"
+    bindsym u exec $nsi ~/.scripts/i3cmds/i3exit switch_user, mode "default"
+    bindsym e exec $nsi ~/.scripts/i3cmds/i3exit logout, mode "default"
+    bindsym h exec $nsi ~/.scripts/i3cmds/i3exit hibernate, mode "default"
+    bindsym r exec $nsi ~/.scripts/i3cmds/i3exit reboot, mode "default"
+    bindsym Shift+s exec $nsi i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -100,104 +101,104 @@ mode "$mode_gaps_outer" {
 # #---Run at start  scrips---# #
 #######################################
 #####		Dunst Notifications         
-exec --no-startup-id ~/.scripts/apps/launchDunst.sh
+exec $nsi				~/.scripts/apps/launchDunst.sh
 #####		Composite manager                      
-exec --no-startup-id ~/.scripts/apps/launchCompton.sh
+exec $nsi				~/.scripts/apps/launchCompton.sh
 #####		Polybar       
-exec --no-startup-id $HOME/.scripts/apps/launchPolybar.sh        		 
-bindsym $mod+p 			exec --no-startup-id $HOME/.scripts/apps/launchPolybar.sh
+exec $nsi				$HOME/.scripts/apps/launchPolybar.sh        		 
+bindsym $mod+p 	exec $nsi $HOME/.scripts/apps/launchPolybar.sh
 #####		Keyboard Keys custom changes
-exec --no-startup-id remaps
+exec $nsi				remaps
 #####		Invisible mouse under unused timeframe.                
-exec --no-startup-id unclutter
+exec $nsi				unclutter
 
 #######################################
 # #---Startup commands---# #
 #######################################
 # Hide scratchpad
-exec --no-startup-id scratchpad show
+exec $nsi				scratchpad show
 # Wal
-exec --no-startup-id wal -R
+exec $nsi				wal -R
 
 #######################################
 # #---Startup Apps---# #
 #######################################
 # Set Urxvt as upwards terminal
-exec --no-startup-id urxvt
+exec $nsi				urxvt
 
 #######################################
 # #---Kill Commands---# #
 #######################################
 # Kill Polybar
-bindsym $mod+Shift+p 		exec --no-startup-id killall -q polybar
+bindsym $mod+Shift+p			exec $nsi killall -q polybar
 # Kill Compton
-bindsym $mod+Shift+c 		exec killall -q compton
+bindsym $mod+Shift+c			exec killall -q compton
 # Kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+q			kill
 
 #######################################
 # #--- BINDINGS---# #
 #######################################
 # St
-bindsym $mod+Return 			exec $term
+bindsym $mod+Return				exec $term
 # Vim 
-bindsym $mod+v 						exec $term -e $EDITOR 
+bindsym $mod+v						exec $term -e $EDITOR 
 # Ranger
-bindsym $mod+r 			exec $term -e $FILE
+bindsym $mod+r						exec $term -e $FILE
 # dmenu
 bindsym $mod+d						exec ~/.scripts/apps/dmen.sh 
 # Show selection (xclip)
-bindsym $mod+Insert				exec --no-startup-id showclip
+bindsym $mod+Insert				exec $nsi showclip
 # i3lock
-bindsym $mod+9 						exec i3lock-fancy -t ""
-bindsym $mod+c 						exec --no-startup-id compton -b --config $HOME/.config/compton/compton.conf
+bindsym $mod+9						exec i3lock-fancy -t ""
+bindsym $mod+c						exec $nsi compton -b --config $HOME/.config/compton/compton.conf
 # Testing my Skeys app keymap 
-bindsym $sup+t 						exec --no-startup-id surf http://localhost:8080/
+bindsym $sup+t						exec $nsi surf http://localhost:8080/
 
 #######################################
 # #---Function Buttons---# #
 #######################################
 # Shortcut Help
-bindsym $mod+F1		exec --no-startup-id surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css
+bindsym $mod+F1		exec $nsi surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css
 # Restart I3
 bindsym $mod+F2		restart
 # Moltimonitor selector if any
-bindsym $mod+F3		exec --no-startup-id displayselect
+bindsym $mod+F3		exec $nsi displayselect
 # Hibernation
-bindsym $mod+F4		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
+bindsym $mod+F4		exec $nsi prompt "Hibernate computer?" "$hibernate"
 # Refresh network
-bindsym $mod+F5		exec --no-startup-id $netrefresh
+bindsym $mod+F5		exec $nsi $netrefresh
 # Puse Mixer
-bindsym $mod+F6		exec --no-startup-id $term -e pulsemixer
-#bindsym $mod+F7		exec --no-startup-id td-toggle
-#bindsym $mod+F8		exec --no-startup-id ~/.config/mutt/etc/mailsync.sh
-bindsym $mod+F9		exec --no-startup-id dmenumount
-bindsym $mod+F10	exec --no-startup-id dmenuumount
-bindsym $mod+F11	exec --no-startup-id camtoggle
+bindsym $mod+F6		exec $nsi $term -e pulsemixer
+#bindsym $mod+F7		exec $nsi td-toggle
+#bindsym $mod+F8		exec $nsi ~/.config/mutt/etc/mailsync.sh
+bindsym $mod+F9		exec $nsi dmenumount
+bindsym $mod+F10	exec $nsi dmenuumount
+bindsym $mod+F11	exec $nsi camtoggle
 bindsym $mod+F12	exec $term -e nmtui
 
 #######################################
 # #--- I3 MODES ---#
 #######################################
 # Mode Gaps
-bindsym $mod+g mode "$mode_gaps"
+bindsym $mod+g				mode "$mode_gaps"
 # Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
+bindsym $mod+0				mode "$mode_system"
 # Resize window (you can also use the mouse for that)
-bindsym $mod+Shift+r mode "resize"
+bindsym $mod+Shift+r 	mode "resize"
 
 #######################################
 # #--- screenshots and recording ---# #
 #######################################
-bindsym Home 			exec --no-startup-id maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
-bindsym Shift+Home 		exec --no-startup-id maimpick
+bindsym Home				exec $nsi maim pic-full-"$(date '+%y%m%d-%H%M-%S').png"
+bindsym Shift+Home	exec $nsi maimpick
 
 #######################################
 # #--- PlayerCtl Controls --# #
 ######################################
-bindsym $mod+Prior exec --no-startup-id playerctl next 
-bindsym $mod+Next exec --no-startup-id playerctl previous 
-bindsym $mod+End exec --no-startup-id playerctl play-pause
+bindsym $mod+Prior	exec $nsi playerctl next 
+bindsym $mod+Next		exec $nsi playerctl previous 
+bindsym $mod+End		exec $nsi playerctl play-pause
 
 #######################################
 #######################################
@@ -211,48 +212,48 @@ bindsym $mod+End exec --no-startup-id playerctl play-pause
 # #--- Borders---# #
 #######################################
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window none
-new_float none
+new_window								none
+new_float									none
 # Hide borders
-hide_edge_borders both
+hide_edge_borders					both
 # change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 2
-bindsym $mod+i border normal
+bindsym $mod+u						border none
+bindsym $mod+y						border pixel 2
+bindsym $mod+i						border normal
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 # Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h						focus left
+bindsym $mod+j						focus down
+bindsym $mod+k						focus up
+bindsym $mod+l						focus right
 # Move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h			move left
+bindsym $mod+Shift+j			move down
+bindsym $mod+Shift+k			move up
+bindsym $mod+Shift+l			move right
 # Focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+a						focus parent
 # Alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left					focus left
+bindsym $mod+Down					focus down
+bindsym $mod+Up						focus up
+bindsym $mod+Right				focus right
 # Alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left		move left
+bindsym $mod+Shift+Down		move down
+bindsym $mod+Shift+Up			move up
+bindsym $mod+Shift+Right	move right
 # Toggle fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f						fullscreen toggle
 # Toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space	floating toggle
+bindsym $mod+space				focus mode_toggle
 # Toggle sticky
-bindsym $mod+Shift+s sticky toggle
+bindsym $mod+Shift+s			sticky toggle
 # Floating to bottom
-bindsym $mod+Ctrl+l floating toggle; sticky toggle; exec --no-startup-id bottomright 
-bindsym $mod+Ctrl+h 	floating toggle; sticky toggle; exec --no-startup-id bottomleft
+bindsym $mod+Ctrl+l				floating toggle; sticky toggle; exec $nsi bottomright 
+bindsym $mod+Ctrl+h				floating toggle; sticky toggle; exec $nsi bottomleft
 
 ######################################
 ######################################
@@ -262,24 +263,23 @@ bindsym $mod+Ctrl+h 	floating toggle; sticky toggle; exec --no-startup-id bottom
 ######################################
 ######################################
 # Split orientation
-bindsym $mod+q split toggle
+bindsym $mod+q						split toggle
 # Change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s						layout stacking
+bindsym $mod+w 						layout tabbed
+bindsym $mod+e						layout toggle split
+# Navigate workspaces next / previous
+bindsym $mod+Ctrl+Right		workspace next
+bindsym $mod+Ctrl+Left		workspace prev
 # Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+minus	move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus				scratchpad show
 # Workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
-# Navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-
+bindsym $mod+b						workspace back_and_forth
+bindsym $mod+Shift+b			move container to workspace back_and_forth; workspace back_and_forth
 #######################################
 #######################################
 #######################################
@@ -336,16 +336,16 @@ for_window [urgent=latest] focus
 #######################################
 #######################################
 # For class
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Pinentry"] sticky enable
-for_window [class="sent"] border pixel 0px
-for_window [class="URxvt"] move scratchpad, move position 80 537, resize set 1450 368  
+for_window [class="Pavucontrol"]		floating enable
+for_window [class="qt5ct"]					floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"]		floating enable sticky enable border normal
+for_window [class="Pinentry"]				sticky enable
+for_window [class="sent"]						border pixel 0px
+for_window [class="URxvt"]					move scratchpad, move position 80 537, resize set 1450 368  
 # For Title
-for_window [title="Shortcuts"] floating toggle; resize set 1450 850; move position center border none
+for_window [title="Shortcuts"]			floating toggle; resize set 1450 850; move position center border none
 for_window [title="File Transfer*"] floating enable
-for_window [title="nmtui"] floating enable
+for_window [title="nmtui"]					floating enable
 # For Role
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
@@ -384,20 +384,20 @@ client.background       $bg
 #######################################
 # These are the extra media keys that some keyboards have.
 # Audio
-bindsym XF86AudioMute		exec --no-startup-id lmc mute
-bindsym XF86AudioLowerVolume	exec --no-startup-id lmc down 5
-bindsym XF86AudioRaiseVolume	exec --no-startup-id lmc up 5
-bindsym Shift+XF86AudioLowerVolume	exec --no-startup-id lmc down 10
-bindsym Shift+XF86AudioRaiseVolume	exec --no-startup-id lmc up 10
-bindsym Control+XF86AudioLowerVolume	exec --no-startup-id lmc down 1
-bindsym Control+XF86AudioRaiseVolume	exec --no-startup-id lmc up 1
+bindsym XF86AudioMute									exec $nsi lmc mute
+bindsym XF86AudioLowerVolume					exec $nsi lmc down 5
+bindsym XF86AudioRaiseVolume					exec $nsi lmc up 5
+bindsym Shift+XF86AudioLowerVolume		exec $nsi lmc down 10
+bindsym Shift+XF86AudioRaiseVolume		exec $nsi lmc up 10
+bindsym Control+XF86AudioLowerVolume	exec $nsi lmc down 1
+bindsym Control+XF86AudioRaiseVolume	exec $nsi lmc up 1
 # Power Bottom
-bindsym XF86PowerOff		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+bindsym XF86PowerOff									exec $nsi prompt "Shutdown computer?" "$shutdown"
 # Web
-bindsym XF86HomePage		exec $BROWSER 
+bindsym XF86HomePage									exec $nsi $BROWSER 
 # Mail
-bindsym XF86Mail		exec $term 
-bindsym XF86TouchpadToggle	exec --no-startup-id toggletouchpad
+bindsym XF86Mail											exec $term 
+bindsym XF86TouchpadToggle						exec $nsi toggletouchpad
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp						exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown					exec "xbacklight -dec 10; notify-send 'brightness down'"
