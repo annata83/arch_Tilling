@@ -6,6 +6,9 @@ endif
 
 
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf.vim'
+Plug 'dylanaraps/wal.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-surround'
@@ -33,13 +36,16 @@ call plug#end()
 	" themes names https://github.com/rafi/awesome-vim-colorschemes
 	" from awesome-vim-colorshemes are available in 
 	colorscheme abstract
+  "	colorscheme wal
 	"	set background=dark    " Setting dark mode
-	"set background=light   " Setting light mode
+	set background=light   " Setting light mode
 
 	set encoding=utf-8
 	set number relativenumber
 	set mouse=a
-	set nohlsearch
+	set hlsearch
+	" Press Space to turn off highlighting and clear any message already displayed.
+  "	:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 	set clipboard=unnamedplus
 	syntax enable                   " syntax highlighting on
 	set cursorline			" Highlight cursor position
@@ -98,15 +104,17 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 	autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
 
 " Custom Scripts
-
+" Press F4 to toggle highlighting on/off, and show current value.
+:noremap <F4> :set hlsearch! hlsearch?<CR>
 
 
 
 " Plugin Settigs
 
 " FZF Keymaps
-nnoremap <silent> <leader>f :FZF<cr>
-nnoremap <silent> <leader>h :FZF ~<cr>
+nnoremap <silent> <leader>f :FZF/<cr>
+nnoremap <silent> <leader>h :FZF~<cr>
+
 
 " Nerd tree
 	map <C-n> :NERDTreeToggle<CR>
@@ -120,8 +128,8 @@ nnoremap <silent> <leader>h :FZF ~<cr>
 " air-line
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#show_tabs = 0
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
