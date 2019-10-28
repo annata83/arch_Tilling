@@ -57,7 +57,6 @@ class my_edit(Command):
         # content of the current directory.
         return self._tab_directory_content()
 
-
 # https://github.com/ranger/ranger/wiki/Integrating-File-Search-with-fzf
 # Now, simply bind this function to a key, by adding this to your ~/.config/ranger/rc.conf: map <C-f> fzf_select
 class fzf_select(Command):
@@ -113,7 +112,6 @@ class fzf_locate(Command):
                 self.fm.cd(fzf_file)
             else:
                 self.fm.select_file(fzf_file)
-
 class fzf_bring(Command):
     """
     :fzf_bring

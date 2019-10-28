@@ -1,20 +1,10 @@
 # FZF style definition
-
-fzf-preview() {
-	fzf --height 99% "$@" --border --preview-window right:99%  
-}
-# fh - repeat history
-fh() {
+# - repeat history
+fr() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) |
 	fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | 
 	sed -r 's/\\/\\\\/g')
 }
-# fda - including hidden directories
-fd() {
-  local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
-}
-
 # fkill - kill processes - list only the ones you can kill. Modified the earlier script.
 fkill() {
     local pid 
@@ -23,14 +13,23 @@ fkill() {
     else
         pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
     fi  
-
     if [ "x$pid" != "x" ]
     then
         echo $pid | xargs kill -${1:-9}
     fi  
 }
-# Notes Test
-nb() {
+
+#######################################
+# #--- Custom searches ---#
+#######################################
+select_file() {
+	given_file="$1"
+	#fd --type file --follow --hidden --exclude .git | fzf --query="$given_file"
+	fzf --query="$given_file"
+}
+
+# Full system search with preview and EDITOR setup
+f/() {
 	cd /
   previous_file="$1"
   file_to_edit=`select_file $previous_file`
@@ -40,10 +39,16 @@ nb() {
     main "$file_to_edit"
   fi
 }
+# Full home folder search with preview and EDITOR setup
+fh() {
+	cd /home/niko
+  previous_file="$1"
+  file_to_edit=`select_file $previous_file`
 
-select_file() {
-  given_file="$1"
-  fzf --preview="cat {}" --preview-window=right:70%:wrap --query="$given_file"
+  if [ -n "$file_to_edit" ] ; then
+    "$EDITOR" "$file_to_edit"
+    main "$file_to_edit"
+  fi
 }
 
 

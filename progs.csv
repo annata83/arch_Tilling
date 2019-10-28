@@ -64,6 +64,7 @@ A,st-luke-git,"Luke's Smith St compile version"
 ,zathura,"is a pdf viewer with vim-like bindings."
 ,zathura-pdf-mupdf,"allows mupdf pdf compatibility in zathura."\
 ,task,"A command-line todo list manager"
+A,joplin,"Joplin - a note taking and to-do application"
 ,cmus,"Small, fast and powerful console music player"
 A,spotify,"Music Streamming Service"
 ,tig,"Text-mode interface for Git."

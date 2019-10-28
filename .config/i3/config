@@ -97,6 +97,16 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+###################################
+# #--- Scratch pads---#
+###################################
+## dropdown
+# settings for dropdown
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 2
+
 #######################################
 # #---Run at start  scrips---# #
 #######################################
@@ -123,8 +133,18 @@ exec $nsi				wal -R
 #######################################
 # #---Startup Apps---# #
 #######################################
-# Set Urxvt as upwards terminal
-exec $nsi				urxvt
+# start urxvt dropdown scratchpad
+exec --no-startup-id urxvt -name dropdown -e tmux 
+
+###################################
+# Scratch pads
+###################################
+## dropdown
+# settings for dropdown
+for_window [instance="dropdown"] floating enable
+#for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 2
+
 
 #######################################
 # #---Kill Commands---# #
