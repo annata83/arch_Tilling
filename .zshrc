@@ -16,8 +16,6 @@ zplug clear
 # Packages
 zplug 'wfxr/forgit'
 
-
-
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -37,6 +35,9 @@ source $ZSH/oh-my-zsh.sh
 #source "$HOME/.config/shortcutrc" # Load shortcut aliases
 source $HOME/.config/aliasrc
 source $HOME/.config/fzfrc # Load FZF Commands.
+source "`ueberzug library`"
+
 
 # FZF Integration
 #zsh-interactive-cd.plugin.zsh
+

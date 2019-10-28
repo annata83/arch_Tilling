@@ -1,34 +1,32 @@
-!/bin/sh
-# /usr/bin/i3exit
+#!/usr/bin/env bash
 
-# with openrc use loginctl
-[[ $(cat /proc/1/comm) == "systemd" ]] && logind=systemctl || logind=loginctl
+lock() {
+    #  killall compton
+    $HOME/.config/i3lock/i3lock.sh
+    #  compton -b
+}
 
 case "$1" in
     lock)
-        blurlock
+        lock
         ;;
     logout)
         i3-msg exit
         ;;
-    switch_user)
-        dm-tool switch-to-greeter
-        ;;
     suspend)
-        blurlock && $logind suspend
+        systemctl suspend
         ;;
     hibernate)
-        blurlock && $logind hibernate
+        systemctl hibernate
         ;;
     reboot)
-        $logind reboot
+        systemctl reboot
         ;;
     shutdown)
-        $logind poweroff
+        systemctl poweroff
         ;;
     *)
-        echo "== ! i3exit: missing or invalid argument ! =="
-        echo "Try again with: lock | logout | switch_user | suspend | hibernate | reboot | shutdown"
+        echo "Usage: $0 [lock|logout|suspend|hibernate|reboot|shutdown]"
         exit 2
 esac
 
