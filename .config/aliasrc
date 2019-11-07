@@ -28,7 +28,8 @@ alias ka="killall" \
 	ls="ls --color=auto"\
 	dots="/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME"\
 	dotsAdMod="dots status | grep modified | cut -c11-"\
-	dotsAdDel="dots status | grep deleted | cut -c10-"
+	dotsAdDel="dots status | grep deleted | cut -c10-"\
+	wall="cd /home/niko/Images/wall &&  fzfimg --bind 'enter:execute-silent(wal -i {} -st)'"
 #command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 
 shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}

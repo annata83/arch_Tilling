@@ -21,6 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'powerline/powerline'
 Plug 'digitaltoad/vim-pug'
 call plug#end()
 

@@ -41,3 +41,4 @@ source "`ueberzug library`"
 # FZF Integration
 #zsh-interactive-cd.plugin.zsh
 
+

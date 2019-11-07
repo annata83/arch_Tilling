@@ -16,5 +16,3 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-
