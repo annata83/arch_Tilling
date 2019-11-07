@@ -1,5 +1,5 @@
 
-Xft.dpi:       117.7
+Xf.dpi:       117.7
 Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
@@ -7,25 +7,7 @@ Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
+#include "/home/niko/.config/urxvt/urxvt.conf"
 
-! URxvt
-
-! Fonts
-URxvt.font:xft:TerminessTTFNerdFONTMono:size=12
-!URxvt*font: xft:Terminess Powerline:size=14
-!URxvt*font: xft:Inconsolata Nerd Font Mono:size=15, xft:DejaVu Sans:size=12
-!URxvt*font: xft:Terminess Powerline:pixelsize=15:antialias=true
-!URxvt*font: xft:Terminus:pixelsize=14:antialias=true,xft:Inconsolata\ for\ Powerline:pixelsize=14:antialias=true
-
-! Settings
-URxvt.depth:                      32
-!URxvt.background:                 [85]#222D31
-URxvt*scrollBar:                  false
-URxvt*mouseWheelScrollPage:       true
-URxvt*cursorBlink:                true
-URxvt*saveLines:                  5000
-
-URxvt.iso14755:                   false
-URxvt.keysym.Shift-Control-V:     eval:paste_clipboard
-URxvt.keysym.Shift-Control-C:     eval:selection_to_clipboard
-
+! I3 colors
+!#include "/home/niko/.cache/wal/colors.Xresources"

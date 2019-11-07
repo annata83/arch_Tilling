@@ -28,7 +28,7 @@
     separator_color = #263238
     startup_notification = false
     dmenu = /usr/bin/dmenu -p dunst:
-    browser = chromium
+    browser = firefox
     icon_position = left
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
     max_icon_size=128

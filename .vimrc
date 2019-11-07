@@ -35,7 +35,7 @@ call plug#end()
 	set tabstop=2
 	" themes names https://github.com/rafi/awesome-vim-colorschemes
 	" from awesome-vim-colorshemes are available in 
-	colorscheme abstract
+	colorscheme gotham256
   "	colorscheme wal
 	"	set background=dark    " Setting dark mode
 	set background=light   " Setting light mode

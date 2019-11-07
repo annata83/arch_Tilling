@@ -30,4 +30,4 @@ xset -fp /usr/share/fonts/Type1     # Remove the specified font path from Xorg's
 xset -fp /usr/share/fonts/100dpi    # Remove the specified font path from Xorg's list of known font paths
 xset -fp /usr/share/fonts/75dpi     # Remove the specified font path from Xorg's list of known font paths
 
-
+xrdb -I$HOME~/.cache/wal/colors.Xresources

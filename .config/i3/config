@@ -108,43 +108,38 @@ for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 2
 
 #######################################
-# #---Run at start  scrips---# #
-#######################################
-#####		Dunst Notifications         
-exec $nsi				~/.scripts/apps/launchDunst.sh
-#####		Composite manager                      
-exec $nsi				~/.scripts/apps/launchCompton.sh
-#####		Polybar       
-exec $nsi				$HOME/.scripts/apps/launchPolybar.sh        		 
-bindsym $mod+p 	exec $nsi $HOME/.scripts/apps/launchPolybar.sh
-#####		Keyboard Keys custom changes
-exec $nsi				remaps
-#####		Invisible mouse under unused timeframe.                
-exec $nsi				unclutter
-
-#######################################
 # #---Startup commands---# #
 #######################################
 # Hide scratchpad
 exec $nsi				scratchpad show
 # Wal
-exec $nsi				wal -R
+exec $nsi 			wal -c 
+exec $nsi				wal -i /home/niko/.config/wall.png -st
+#exec $nsi				~/.fehbg &
+
+#######################################
+# #---Run at start  scrips---# #
+#######################################
+#####		Dunst Notifications         
+exec $nsi				launchDunst
+### Update Dunst colors
+exec $nsi 			dunsWal
+#####		Composite manager                      
+exec $nsi				launchCompton
+#####		Polybar       
+#exec $nsi				launchPolybar 		 
+bindsym $mod+p 	exec $nsi launchPolybar
+#####		Keyboard Keys custom changes
+exec $nsi				remaps
+#####		Invisible mouse under unused timeframe.                
+exec $nsi				unclutter
+
 
 #######################################
 # #---Startup Apps---# #
 #######################################
 # start urxvt dropdown scratchpad
-exec --no-startup-id urxvt -name dropdown -e tmux 
-
-###################################
-# Scratch pads
-###################################
-## dropdown
-# settings for dropdown
-for_window [instance="dropdown"] floating enable
-#for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] border pixel 2
-
+exec $nsi urxvt -name dropdown -e tmux 
 
 #######################################
 # #---Kill Commands---# #
@@ -379,7 +374,7 @@ gaps inner 0
 gaps outer 0
 # Turn off current Gaps
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
-bindsym $mod+shift+g		gaps inner current set 15; gaps outer current set 15
+bindsym $mod+Shift+g		gaps inner current set 15; gaps outer current set 15
 
 ########################################
 #                Pywal

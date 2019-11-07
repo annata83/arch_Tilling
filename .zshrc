@@ -5,7 +5,7 @@ export ZPLUG_HOME=$HOME/.zplug
 ZSH_THEME="af-magic"
 
 # Plugins
-#plugins=(git)
+plugins=(git archlinux sudo)
 
 source ~/.zplug/init.zsh
 # Supports oh-my-zsh plugins and the like
@@ -15,7 +15,7 @@ zplug clear
 ###########################################################
 # Packages
 zplug 'wfxr/forgit'
-
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
