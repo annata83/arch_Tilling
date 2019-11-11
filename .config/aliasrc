@@ -27,8 +27,6 @@ alias ka="killall" \
 	Spr="source ~/.profile"\
 	ls="ls --color=auto"\
 	dots="/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME"\
-	dotsDiff="/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME status -s | cut -c4- | fzf --no-sort --reverse --bind 'enter:execute(/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME diff {})'" \
-
 	wall="cd /home/niko/Images/wall &&  fzfimg --bind 'enter:execute-silent(wal -i {} -st)'"
 #command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 
