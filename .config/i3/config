@@ -1,12 +1,5 @@
-
-#######################################
-#######################################
 # vim: filetype=i3
 # i3 config file (v4)
-#######################################
-#######################################
-
-
 #######################################
 # #---I3 System Fonts---# #
 #######################################
@@ -15,15 +8,16 @@ font pango:Iconsolata 10
 #######################################
 # #---Basic Definitions---# #
 #######################################
-set $nsi --no-startup-id
-set $term $nsi $TERMINAL
-set $mod Mod4
-set $sup Mod1
-set $stoprec $nsi dmenurecord kill
-set $shutdown sudo -A shutdown -h now
+set $nsi 				--no-startup-id
+set $term 			$nsi $TERMINAL
+set $mod 				Mod4
+set $sup 				Mod1
+set $stoprec 		$nsi dmenurecord kill
+set $shutdown 	sudo -A shutdown -h now
 set $netrefresh $nsi sudo -A systemctl restart NetworkManager
-set $hibernate sudo -A systemctl suspend
-
+set $hibernate 	sudo -A systemctl suspend
+set $ayuda 			surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css 
+set $multiplexer urxvt -name termTmux
 
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
@@ -98,14 +92,19 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 ###################################
-# #--- Scratch pads---#
+# #--- Scratch pads & initial apps settings ---#
 ###################################
 ## dropdown
-# settings for dropdown
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 625 400
-for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 2
+for_window [instance="dropdown"] move position 80 537, resize set 1450 368  
+for_window [instance="dropdown"] move scratchpad
+## Help
+for_window [title="Shortcuts"]	floating enable
+for_window [title="Shortcuts"]	move position center, resize set 1450 825
+for_window [title="Shortcuts"]	move scratchpad
+## tmux
+for_window [instance="termTmux"] move workspace $ws2
 
 #######################################
 # #---Startup commands---# #
@@ -139,7 +138,11 @@ exec $nsi				unclutter
 # #---Startup Apps---# #
 #######################################
 # start urxvt dropdown scratchpad
-exec $nsi urxvt -name dropdown -e tmux 
+exec $nsi urxvt -name dropdown  
+# start Tmux in workspace 2 
+exec $nsi $multiplexer -e tmux
+# start Help Menu in  scratchpad
+exec $nsi $ayuda 
 
 #######################################
 # #---Kill Commands---# #
@@ -156,6 +159,10 @@ bindsym $mod+Shift+q			kill
 #######################################
 # St
 bindsym $mod+Return				exec $term
+# Dropdown
+bindsym $mod+Shift+Return  [instance="dropdown"] scratchpad show
+# Urxvt
+bindsym $mod+Shift+t  		exec urxvt
 # Vim 
 bindsym $mod+v						exec $term -e $EDITOR 
 # Ranger
@@ -174,7 +181,8 @@ bindsym $sup+t						exec $nsi surf http://localhost:8080/
 # #---Function Buttons---# #
 #######################################
 # Shortcut Help
-bindsym $mod+F1		exec $nsi surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css
+#bindsym $mod+F1		exec $nsi $ayuda
+bindsym $mod+F1		[title="Shortcuts"] scratchpad show	
 # Restart I3
 bindsym $mod+F2		restart
 # Moltimonitor selector if any
@@ -223,9 +231,6 @@ bindsym $mod+End		exec $nsi playerctl play-pause
 #######################################
 #######################################
 
-#######################################
-# #--- Borders---# #
-#######################################
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window								none
 new_float									none
@@ -356,9 +361,7 @@ for_window [class="qt5ct"]					floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"]		floating enable sticky enable border normal
 for_window [class="Pinentry"]				sticky enable
 for_window [class="sent"]						border pixel 0px
-for_window [class="URxvt"]					move scratchpad, move position 80 537, resize set 1450 368  
 # For Title
-for_window [title="Shortcuts"]			floating toggle; resize set 1450 850; move position center border none
 for_window [title="File Transfer*"] floating enable
 for_window [title="nmtui"]					floating enable
 # For Role
