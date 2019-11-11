@@ -36,6 +36,9 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.config/aliasrc
 source $HOME/.config/fzfrc # Load FZF Commands.
 source "`ueberzug library`"
+# Import pywal colors to be used by apps.
+. "${HOME}/.cache/wal/colors.sh"
+
 
 
 # FZF Integration

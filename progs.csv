@@ -75,6 +75,8 @@ P,ueberzug,"alternative for w3mimgdisplay "
 A,i3lock-fancy,"I3Lock with Blur and fancies"
 ,rofi,"A window switcher, application launcher and dmenu replacement"
 N,jshint," a tool that helps to detect errors and potential problems in your JavaScript code."
+N,joplin,"An open source note taking and to-do application with synchronisation capabilities."
+
 ### Unused for now  
 #,ttf-font-awesome,"Fonts for Polybar Icons"
 #,xorg-xwininfo,"Allows querying information about windows."
