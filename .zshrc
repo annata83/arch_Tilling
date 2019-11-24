@@ -4,6 +4,10 @@ export ZPLUG_HOME=$HOME/.zplug
 
 ZSH_THEME="af-magic"
 
+# jrnl History Erase
+setopt HIST_IGNORE_SPACE
+alias jrnl=" jrnl"
+
 # Plugins
 plugins=(git archlinux sudo)
 
@@ -14,7 +18,7 @@ source ~/.zplug/init.zsh
 zplug clear
 ###########################################################
 # Packages
-zplug 'wfxr/forgit'
+
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then

@@ -6,23 +6,18 @@ endif
 
 
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
-Plug 'dylanaraps/wal.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'powerline/powerline'
 Plug 'digitaltoad/vim-pug'
+Plug 'chrisbra/Colorizer'
 call plug#end()
 
 " Basics
@@ -46,7 +41,7 @@ call plug#end()
 	set mouse=a
 	set hlsearch
 	" Press Space to turn off highlighting and clear any message already displayed.
-  "	:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+ 	:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 	set clipboard=unnamedplus
 	syntax enable                   " syntax highlighting on
 	set cursorline			" Highlight cursor position
@@ -194,7 +189,7 @@ let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets th
 
 
 " Theme
-let g:airline_theme='minimalist'
+let g:airline_theme='simple'
 
 
 " Coc.nvim\
@@ -213,3 +208,6 @@ endfunction
 "Move bettwen buffers                   
 :nnoremap <C-m> :bnext<CR>  
 :nnoremap <C-b> :bprevious<CR>
+
+" css-colors Plugin
+let g:cssColorVimDoNotMessMyUpdatetime = 1

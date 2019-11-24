@@ -4,6 +4,7 @@
 ,ttf-linux-libertine,"Sans and serif fonts for Linux."
 A,nerd-fonts-terminus,"Fonts for Terminal & Polybar" 
 # Basic System blocks
+A,tiger,"System Scan Utility"
 ,xset,"User preference utility for X"
 ,xf86-video-nouveau,"Open Source 3D acceleration driver for nVidia cards"
 ,mesa,"An open-source implementation of the OpenGL specification"
@@ -76,7 +77,12 @@ A,i3lock-fancy,"I3Lock with Blur and fancies"
 ,rofi,"A window switcher, application launcher and dmenu replacement"
 N,jshint," a tool that helps to detect errors and potential problems in your JavaScript code."
 N,joplin,"An open source note taking and to-do application with synchronisation capabilities."
-
+P,pycrypto,"Cryto library to encrypt jrnl app"
+P,jrnl"[encrypted]","Collect your thoughts and notes without leaving the command line."
+### Unused for now  
+#,ttf-font-awesome,"Fonts for Polybar Icons"
+#,xorg-xwininfo,"Allows querying information about windows."
+#,dosfstools,"allows your computer to access dos-like filesystems."
 ### Unused for now  
 #,ttf-font-awesome,"Fonts for Polybar Icons"
 #,xorg-xwininfo,"Allows querying information about windows."

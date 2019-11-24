@@ -8,16 +8,16 @@ font pango:Iconsolata 10
 #######################################
 # #---Basic Definitions---# #
 #######################################
-set $nsi 				--no-startup-id
-set $term 			$nsi $TERMINAL
-set $mod 				Mod4
-set $sup 				Mod1
-set $stoprec 		$nsi dmenurecord kill
-set $shutdown 	sudo -A shutdown -h now
-set $netrefresh $nsi sudo -A systemctl restart NetworkManager
-set $hibernate 	sudo -A systemctl suspend
-set $ayuda 			surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css 
-set $multiplexer urxvt -name termTmux
+set $nsi 					--no-startup-id
+set $term 				$nsi $TERMINAL
+set $mod 					Mod4
+set $sup 					Mod1
+set $stoprec 			$nsi dmenurecord kill
+set $shutdown 		sudo -A shutdown -h now
+set $netrefresh 	$nsi sudo -A systemctl restart NetworkManager
+set $hibernate 		sudo -A systemctl suspend
+set $ayuda 				surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css 
+set $multiplexer	urxvt -name termTmux
 
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
@@ -99,12 +99,10 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] border pixel 2
 for_window [instance="dropdown"] move position 80 537, resize set 1450 368  
 for_window [instance="dropdown"] move scratchpad
-## Help
-for_window [title="Shortcuts"]	floating enable
-for_window [title="Shortcuts"]	move position center, resize set 1450 825
-for_window [title="Shortcuts"]	move scratchpad
 ## tmux
 for_window [instance="termTmux"] move workspace $ws2
+## Ranger
+for_window [title="ranger"] move workspace $ws3
 
 #######################################
 # #---Startup commands---# #
@@ -140,9 +138,11 @@ exec $nsi				unclutter
 # start urxvt dropdown scratchpad
 exec $nsi urxvt -name dropdown  
 # start Tmux in workspace 2 
-exec $nsi $multiplexer -e tmux
+exec $nsi	$multiplexer -e tmux
+# start ranger in work 3
+exec "sleep 10; $term -e $FILE"
 # start Help Menu in  scratchpad
-exec $nsi $ayuda 
+exec $nsi $ayuda
 
 #######################################
 # #---Kill Commands---# #
@@ -181,8 +181,7 @@ bindsym $sup+t						exec $nsi surf http://localhost:8080/
 # #---Function Buttons---# #
 #######################################
 # Shortcut Help
-#bindsym $mod+F1		exec $nsi $ayuda
-bindsym $mod+F1		[title="Shortcuts"] scratchpad show	
+bindsym $mod+F1		exec $nsi $ayuda
 # Restart I3
 bindsym $mod+F2		restart
 # Moltimonitor selector if any
@@ -350,9 +349,7 @@ for_window [urgent=latest] focus
 
 #######################################
 #######################################
-#######################################
 # #---Specific applications Settings -#
-#######################################
 #######################################
 #######################################
 # For class
@@ -361,9 +358,12 @@ for_window [class="qt5ct"]					floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"]		floating enable sticky enable border normal
 for_window [class="Pinentry"]				sticky enable
 for_window [class="sent"]						border pixel 0px
+for_window [class="Surf"]						fullscreen enable
+for_window [class="Zathura"]				move workspace $ws4
 # For Title
 for_window [title="File Transfer*"] floating enable
 for_window [title="nmtui"]					floating enable
+for_window [title="pulsemixer"]		floating enable
 # For Role
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
