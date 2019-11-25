@@ -5,8 +5,8 @@ export ZPLUG_HOME=$HOME/.zplug
 ZSH_THEME="af-magic"
 
 # jrnl History Erase
-setopt HIST_IGNORE_SPACE
-alias jrnl=" jrnl"
+#setopt HIST_IGNORE_SPACE
+#alias jrnl=" jrnl"
 
 # Plugins
 plugins=(git archlinux sudo)
@@ -36,10 +36,9 @@ zplug load
 # External files
 
 source $ZSH/oh-my-zsh.sh
-#source "$HOME/.config/shortcutrc" # Load shortcut aliases
 source $HOME/.config/aliasrc
 source $HOME/.config/fzfrc # Load FZF Commands.
-source "`ueberzug library`"
+#source "`ueberzug library`"
 # Import pywal colors to be used by apps.
 . "${HOME}/.cache/wal/colors.sh"
 

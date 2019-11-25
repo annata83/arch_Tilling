@@ -100,9 +100,9 @@ for_window [instance="dropdown"] border pixel 2
 for_window [instance="dropdown"] move position 80 537, resize set 1450 368  
 for_window [instance="dropdown"] move scratchpad
 ## tmux
-for_window [instance="termTmux"] move workspace $ws2
+#for_window [instance="termTmux"] move workspace $ws2
 ## Ranger
-for_window [title="ranger"] move workspace $ws3
+#for_window [title="ranger"] move workspace $ws3
 
 #######################################
 # #---Startup commands---# #
@@ -110,9 +110,9 @@ for_window [title="ranger"] move workspace $ws3
 # Hide scratchpad
 exec $nsi				scratchpad show
 # Wal
-exec $nsi 			wal -c 
-exec $nsi				wal -i /home/niko/.config/wall.png -st
-#exec $nsi				~/.fehbg &
+#exec $nsi 			wal -c 
+#exec $nsi				wal -i /home/niko/.config/wall.png -st
+exec $nsi				~/.fehbg &
 
 #######################################
 # #---Run at start  scrips---# #
@@ -138,11 +138,11 @@ exec $nsi				unclutter
 # start urxvt dropdown scratchpad
 exec $nsi urxvt -name dropdown  
 # start Tmux in workspace 2 
-exec $nsi	$multiplexer -e tmux
+#exec $nsi	$multiplexer -e tmux
 # start ranger in work 3
-exec "sleep 10; $term -e $FILE"
+#exec "sleep 10; $term -e $FILE"
 # start Help Menu in  scratchpad
-exec $nsi $ayuda
+#exec $nsi $ayuda
 
 #######################################
 # #---Kill Commands---# #
