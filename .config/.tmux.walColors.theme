@@ -1,0 +1,54 @@
+# This is the tmux wal automatic theme file:
+#BACKGROUND="{background}"
+#FOREGROUND="{foreground}"
+#CURRENTLINE="{color6}"
+#SELECTION="{color7}"
+#COMMENT="{color8}"
+#COLOR1="{color1}"
+#COLOR2="{color2}"
+#COLOR3="{color3}"
+#COLOR4="{color4}"
+#COLOR5="{color5}"
+
+
+
+# default inactive statusbar colors
+# Powerline+Pywal theme
+
+set-option -g status-bg "{background}" # Background
+set-option -g status-fg "{foreground}"  # Foreground
+#set-option -g status-attr default
+
+# Pane border
+#set -g pane-border-style fg=:"{foreground}",bg=default
+# Active pane border
+#set -g pane-active-border-style fg="{color2}",bg=default
+# Pane number indicator
+#set -g display-panes-colour "{colour5}"
+#set -g display-panes-active-colour "{colour2}"
+
+# Message
+#set -g message-style fg="{foreground}",bg="{background}"
+
+# Command message
+#set -g message-command-style fg="{foreground}",bg="{background}"
+
+# Mode
+#set -g mode-style fg="{foreground}",bg="{background}"
+
+
+# message text
+#set-option -g message-bg "{color1}"  	# Red
+#set-option -g message-fg "{background}" # Background
+#set-option -g message-attr bright
+
+# Selected window
+set-option -g window-status-current-format "#[bg={color2},fg={background}]#[bg={color2},fg={foreground}]#I #W#[bg={background},fg={color2}]"
+
+# Inactive window
+set-option -g window-status-format "#[bg={background},fg={background}]#[bg={background},fg={color5}]#I #W#[bg={background},fg={background}]"
+
+# Remove padding at the left hand side
+#set -g status-left ""
+# Show a clock at the right hand side
+set -g status-right "#[bg={background},fg={color2},bold]#[bg={color2},fg={foreground}] %H:%M "
