@@ -52,7 +52,7 @@ A,st-luke-git,"Luke's Smith St compile version"
 ,dmenu,"runs commands and provides a UI for selection."
 # Basic Apps
 ,firefox,"Standalone web browser from mozilla.org"
-, chromium,"A web browser built for speed, simplicity, and security"
+,chromium,"A web browser built for speed, simplicity, and security"
 ,ranger,"Terminal file manager."
 ,surf,"ligth weigth browser"
 ,tmux,"Terminal Multiplexer"
@@ -72,13 +72,13 @@ A,spotify,"Music Streamming Service"
 # Otrhers
 ,nodejs,"Nodejs Plataform"
 ,man-db,"A utility for reading man pages"
-P,ueberzug,"alternative for w3mimgdisplay "
+#P,ueberzug,"alternative for w3mimgdisplay "
 A,i3lock-fancy,"I3Lock with Blur and fancies"
 ,rofi,"A window switcher, application launcher and dmenu replacement"
-N,jshint," a tool that helps to detect errors and potential problems in your JavaScript code."
-N,joplin,"An open source note taking and to-do application with synchronisation capabilities."
-P,pycrypto,"Cryto library to encrypt jrnl app"
-P,jrnl"[encrypted]","Collect your thoughts and notes without leaving the command line."
+#N,jshint," a tool that helps to detect errors and potential problems in your JavaScript code."
+#N,joplin,"An open source note taking and to-do application with synchronisation capabilities."
+#P,pycrypto,"Cryto library to encrypt jrnl app"
+#P,jrnl"[encrypted]","Collect your thoughts and notes without leaving the command line."
 ### Unused for now  
 #,ttf-font-awesome,"Fonts for Polybar Icons"
 #,xorg-xwininfo,"Allows querying information about windows."
@@ -118,5 +118,3 @@ P,jrnl"[encrypted]","Collect your thoughts and notes without leaving the command
 #A,sublime-text-dev,"Sophisticated text editor for code, html and prose - dev build"
 #A,pacolog,"pacolog query recent commits  packages from both official repositories and the AUR"
 #,trash-cli,"Command line interface to the freedesktop.org trashcan"
-
-
