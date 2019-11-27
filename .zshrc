@@ -20,6 +20,7 @@ zplug clear
 # Packages
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -40,9 +41,7 @@ source $HOME/.config/aliasrc
 source $HOME/.config/fzfrc # Load FZF Commands.
 #source "`ueberzug library`"
 # Import pywal colors to be used by apps.
-. "${HOME}/.cache/wal/colors.sh"
-
-
+#. "${HOME}/.cache/wal/colors.sh"
 
 # FZF Integration
 #zsh-interactive-cd.plugin.zsh

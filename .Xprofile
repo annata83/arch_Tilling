@@ -2,9 +2,9 @@
 # Profile file. Runs on login.
 
 # Adds `~/.scripts` and all subdirectories to $PATH
-export PATH="$PATH:$(du "$HOME/.scripts/" "$HOME/.npm-global/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$(du "$HOME/.scripts/" "$HOME/.npm-global/bin" "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="vim" 
-export TERMINAL="st -f TerminessTTFNerdFONTMono:pixelsize=20:antialias=true:autohint=true"
+export TERMINAL="urxvt"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
@@ -27,10 +27,10 @@ export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
 # Start graphical server if i3 not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
+#[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
 
 # Switch escape and caps if tty:
-sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
+#sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 
 # "Fasd". This will setup a command hook that executes on every command and advanced tab completion for zsh and bash.
 #  eval "$(fasd --init auto)"

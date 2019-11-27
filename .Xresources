@@ -11,3 +11,5 @@ Xft.lcdfilter: lcddefault
 
 ! I3 colors
 !#include "/home/niko/.cache/wal/colors.Xresources"
+#include	"/.cache/wal/i3.walColor.conf
+

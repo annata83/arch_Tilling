@@ -43,8 +43,8 @@ set-option -g status-fg "{foreground}"  # Foreground
 #set-option -g message-attr bright
 
 # Selected window
-set-option -g window-status-current-format "#[bg={color2},fg={background}]#[bg={color2},fg={foreground}]#I #W#[bg={background},fg={color2}]"
-
+#set-option -g window-status-current-format "#[bg={color2},fg={background}]#[bg={color2},fg={foreground}]#I #W#[bg={background},fg={color2}]"
+set-option -g window-status-current-format "#[bg={color2},fg={foreground}]#I #W#[bg={background},fg={color2}]"
 # Inactive window
 set-option -g window-status-format "#[bg={background},fg={background}]#[bg={background},fg={color5}]#I #W#[bg={background},fg={background}]"
 
