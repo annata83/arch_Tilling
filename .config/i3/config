@@ -110,9 +110,9 @@ for_window [instance="dropdown"] move scratchpad
 # Hide scratchpad
 exec $nsi				scratchpad show
 # Wal
-#exec $nsi 			wal -R 
+exec $nsi 			wal -wst 
 #exec $nsi				wal -i /home/niko/.config/wall.png -st
-exec $nsi				~/.fehbg &
+#exec $nsi				~/.fehbg &
 
 #######################################
 # #---Run at start  scrips---# #

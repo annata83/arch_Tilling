@@ -2,8 +2,8 @@
 # Profile file. Runs on login.
 
 # Adds `~/.scripts` and all subdirectories to $PATH
-#export PATH="$PATH:$(du "$HOME/.scripts/" "$HOME/.npm-global/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$(du "$HOME/.scripts/" "$HOME/.npm-global/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+#export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="vim"
 export TERMINAL="st -f TerminessTTFNerdFONTMono:pixelsize=20:antialias=true:autohint=true;"
 export BROWSER="firefox"
