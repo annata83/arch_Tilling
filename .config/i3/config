@@ -3,7 +3,7 @@
 #######################################
 # #---I3 System Fonts---# #
 #######################################
-font pango:Iconsolata 10 
+font pango:Iconsolata 11 
 
 #######################################
 # #---Basic Definitions---# #
@@ -100,7 +100,7 @@ for_window [instance="dropdown"] border pixel 2
 for_window [instance="dropdown"] move position 80 537, resize set 1450 368  
 for_window [instance="dropdown"] move scratchpad
 ## tmux
-#for_window [instance="termTmux"] move workspace $ws2
+for_window [instance="termTmux"] move workspace $ws2
 ## Ranger
 #for_window [title="ranger"] move workspace $ws3
 
@@ -110,9 +110,7 @@ for_window [instance="dropdown"] move scratchpad
 # Hide scratchpad
 exec $nsi				scratchpad show
 # Wal
-exec $nsi 			wal -wst 
-#exec $nsi				wal -i /home/niko/.config/wall.png -st
-#exec $nsi				~/.fehbg &
+exec $nsi				setbg
 
 #######################################
 # #---Run at start  scrips---# #
@@ -131,14 +129,13 @@ exec $nsi				remaps
 #####		Invisible mouse under unused timeframe.                
 exec $nsi				unclutter
 
-
 #######################################
 # #---Startup Apps---# #
 #######################################
 # start urxvt dropdown scratchpad
 exec $nsi urxvt -name dropdown  
 # start Tmux in workspace 2 
-#exec $nsi	$multiplexer -e tmux
+exec $nsi	$multiplexer -e tmux
 # start ranger in work 3
 #exec "sleep 10; $term -e $FILE"
 # start Help Menu in  scratchpad
@@ -428,3 +425,4 @@ bindsym XF86TouchpadToggle						exec $nsi toggletouchpad
 # Screen brightness controls
 bindsym XF86MonBrightnessUp						exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown					exec "xbacklight -dec 10; notify-send 'brightness down'"
+
