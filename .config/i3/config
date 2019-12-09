@@ -110,7 +110,7 @@ for_window [instance="termTmux"] move workspace $ws2
 # Hide scratchpad
 exec $nsi				scratchpad show
 # Wal
-exec $nsi				setbg
+exec $nsi				wal -i /home/niko/.config/wall.png -st
 
 #######################################
 # #---Run at start  scrips---# #
@@ -425,4 +425,3 @@ bindsym XF86TouchpadToggle						exec $nsi toggletouchpad
 # Screen brightness controls
 bindsym XF86MonBrightnessUp						exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown					exec "xbacklight -dec 10; notify-send 'brightness down'"
-
