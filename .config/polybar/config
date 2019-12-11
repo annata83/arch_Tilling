@@ -1,25 +1,12 @@
 vim:ft=dosini
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;==========================================================
-;
 ;-------- Settings
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
+compositing-background = xor
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
-
-; vim:ft=dosini
 
 ;-------- Wal colors
 [colors]
@@ -44,23 +31,15 @@ height = 27
 radius = 0
 fixed-center = true
 
-; Padding & Margin
-;padding-left = 0
-;padding-right = 1
-;module-margin-left = 1
 module-margin-right = 1
 
 ; Main color
-;background = #00000000
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 ; Fonts
-font-0 = "Font Awesome 5 Free:style=Regular:pixelsize=11;1"
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=11;1"
-font-2 = "Font Awesome 5 Brands:pixelsize=11;1"
-;font-3 = "Iconsolata:size=11.1"
-font-3 = "Terminess:size=11.1"
+;font-2 = "Iconsolata:size=11.1"
+font-1 = "Terminess:size=11.1"
 
 
 
@@ -125,7 +104,7 @@ type = internal/network
 interface =  wlo1
 format-connected = <label-connected>
 label-connected = "%upspeed:7%"
-format-connected-prefix = ""
+#format-connected-prefix = ""
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-foreground = ${colors.foreground}
 ;format-connected-background = ${colors.background}
@@ -135,7 +114,7 @@ type = internal/network
 interface =  wlo1
 format-connected = <label-connected>
 label-connected = "%downspeed:7%"
-format-connected-prefix = ""
+#format-connected-prefix = ""
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-foreground = ${colors.foreground}
 ;format-connected-background = ${colors.background}
@@ -143,20 +122,20 @@ format-connected-foreground = ${colors.foreground}
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
+#format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+#format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
 [module/date-icon]
 type = custom/text
-content = "-"
+#content = "-"
 
 content-foreground = ${colors.foreground-alt}
 
@@ -196,39 +175,39 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+#ramp-0 = 
+#ramp-1 = 
+#ramp-2 = 
+#ramp-foreground = ${colors.foreground-alt}
 
 [module/wlan]
 type = internal/network
 interface =  wlo1
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected =<label-connected>
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
+#ramp-signal-0 = 
+#ramp-signal-1 = 
+#ramp-signal-2 = 
+#ramp-signal-3 = 
+#ramp-signal-4 = 
+#ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/updates-arch-combined]
 type = custom/script
 exec = ~/.scripts/polybar/updates-arch-combined.sh
 interval = 600
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+#format-prefix = 
+#format-prefix-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
@@ -240,13 +219,13 @@ format-charging = <ramp-capacity> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+#format-full-prefix = " "
+#format-full-prefix-foreground = ${colors.foreground-alt}
 
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-foreground = ${colors.foreground-alt}
+#ramp-capacity-0 = " "
+#ramp-capacity-1 = " "
+#ramp-capacity-2 = " "
+#ramp-capacity-foreground = ${colors.foreground-alt}
 ;ramp-capacity-background = ${colors.background}
 
 [module/pulseaudio]
@@ -266,32 +245,32 @@ interval = 5
 
 ;Additional formatting
 ; Available tags:
-;   <label-volume> (default)
+<label-volume> (default)
 ;   <ramp-volume>
 ;   <bar-volume>
-format-volume = <ramp-volume> <label-volume>
+#format-volume = <ramp-volume> <label-volume>
 
 ; Available tags:
-;   <label-muted> (default)
+ <label-muted> (default)
 ;   <ramp-volume>
 ;   <bar-volume>
 ;format-muted = <ramp-volume> <label-muted>
 
 ; Available tokens:
 ;   %percentage% (default)
-;label-volume = %percentage%%
+label-volume = %percentage%%
 
 ; Available tokens:
 ;   %percentage% (default)
-label-muted = "" muted
-label-muted-foreground = ${colors.foreground-alt}
+;label-muted = 
+;label-muted-foreground = ${colors.foreground-alt}
 
 
 ; Only applies if <ramp-volume> is used
-ramp-volume-0 = " "
-ramp-volume-1 = " "
-ramp-volume-2 = " "
-ramp-volume-foreground = ${colors.foreground-alt}
+#ramp-volume-0 = " "
+#ramp-volume-1 = " "
+#ramp-volume-2 = " "
+#ramp-volume-foreground = ${colors.foreground-alt}
 ;ramp-volume-background = ${colors.background}
 
 ; Not using
