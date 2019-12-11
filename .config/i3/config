@@ -110,7 +110,8 @@ for_window [instance="termTmux"] move workspace $ws2
 # Hide scratchpad
 exec $nsi				scratchpad show
 # Wal
-exec $nsi				wal -i /home/niko/.config/wall.png -st
+#exec $nsi				wal -i /home/niko/.config/wall.png -st
+exec $nsi				setbg
 
 #######################################
 # #---Run at start  scrips---# #
