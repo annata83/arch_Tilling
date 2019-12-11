@@ -1,18 +1,4 @@
 
-.cache/chromium/
-
-.cache/gstreamer-1.0/
-
-.cache/mozilla/
-
-.cache/mesa_shader_cache/
-
-.cache/fontconfig/
-
-.cache/spotify/
-
-.cache/vim/
-
 .cache/
 
 .config/spotify/
@@ -50,3 +36,5 @@
 .viminfo
 
 .Xauthority
+
+.task/
