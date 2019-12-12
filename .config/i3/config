@@ -17,7 +17,6 @@ set $shutdown 		sudo -A shutdown -h now
 set $netrefresh 	$nsi sudo -A systemctl restart NetworkManager
 set $hibernate 		sudo -A systemctl suspend
 set $ayuda 				surf ~/Coding/Skeys/dist/*.html -t ~/Coding/Skeys/dist/*.css 
-set $multiplexer	urxvt -name termTmux
 
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
@@ -100,7 +99,7 @@ for_window [instance="dropdown"] border pixel 2
 for_window [instance="dropdown"] move position 80 537, resize set 1450 368  
 for_window [instance="dropdown"] move scratchpad
 ## tmux
-for_window [instance="termTmux"] move workspace $ws2
+for_window [title="tmux"] move workspace $ws2
 ## Ranger
 #for_window [title="ranger"] move workspace $ws3
 
@@ -136,7 +135,7 @@ exec $nsi				unclutter
 # start kitty dropdown scratchpad
 exec $nsi urxvt -name dropdown  
 # start Tmux in workspace 2 
-exec $nsi	$multiplexer -e tmux
+exec $nsi	$term -e tmux
 # start ranger in work 3
 exec $nsi "sh -c 'sleep 5; $term -e $FILE'"
 # start Help Menu in  scratchpad

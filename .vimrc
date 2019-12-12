@@ -28,7 +28,7 @@ set softtabstop=0
 set shiftwidth=2
 set tabstop=2
 " themes names https://github.com/rafi/awesome-vim-colorschemes
-colorscheme gotham256
+colorscheme alduin
 "set background=light    " Setting dark or light mode
 set encoding=utf-8
 set number relativenumber
