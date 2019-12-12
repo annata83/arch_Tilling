@@ -8,10 +8,9 @@ export TERMINAL="urxvt"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
-
 export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
 
-# Fuzzy Finder with fd colored folders, hideen files and not git directories.
+ #Fuzzy Finder with fd colored folders, hideen files and not git directories. 
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 # Fuzzy Finder Options to use Bat and previews with syntax-highlithing.
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
@@ -27,10 +26,10 @@ export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
 # Start graphical server if i3 not already running.
-#[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
 
 # Switch escape and caps if tty:
-#sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
+sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 
 # "Fasd". This will setup a command hook that executes on every command and advanced tab completion for zsh and bash.
 #  eval "$(fasd --init auto)"
