@@ -17,6 +17,8 @@
 
 .config/ranger/colorschemes/
 
+.config/neofetch/
+
 .gitkraken/
 
 .gnupg/
@@ -49,6 +51,6 @@
 
 .fehbg
 
-.config/neofetch/
+.zcompdump
 
 Images/wall/
