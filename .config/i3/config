@@ -133,7 +133,7 @@ exec $nsi				unclutter
 #######################################
 # #---Startup Apps---# #
 #######################################
-# start urxvt dropdown scratchpad
+# start kitty dropdown scratchpad
 exec $nsi urxvt -name dropdown  
 # start Tmux in workspace 2 
 exec $nsi	$multiplexer -e tmux
@@ -156,12 +156,10 @@ bindsym $mod+Shift+q			kill
 #######################################
 # #--- BINDINGS---# #
 #######################################
-# St
+# Terminal
 bindsym $mod+Return				exec $term
 # Dropdown
 bindsym $mod+Shift+Return  [instance="dropdown"] scratchpad show
-# Urxvt
-bindsym $mod+Shift+t  		exec urxvt
 # Vim 
 bindsym $mod+v						exec $term -e $EDITOR 
 # Ranger
