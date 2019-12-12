@@ -138,10 +138,11 @@ exec $nsi urxvt -name dropdown
 # start Tmux in workspace 2 
 exec $nsi	$multiplexer -e tmux
 # start ranger in work 3
-#exec "sleep 10; $term -e $FILE"
+exec $nsi "sh -c 'sleep 5; $term -e $FILE'"
 # start Help Menu in  scratchpad
 #exec $nsi $ayuda
-
+# Start Polybar
+exec $nsi "sh -c 'sleep 2; launchPolybar'"
 #######################################
 # #---Kill Commands---# #
 #######################################
@@ -364,6 +365,7 @@ for_window [class="URxvt"]					resize set 1200 800 move position center
 for_window [title="File Transfer*"] floating enable
 for_window [title="nmtui"]					floating enable
 for_window [title="pulsemixer"]		floating enable
+for_window [title="ranger"]				move workspace $ws3
 # For Role
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
