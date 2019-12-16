@@ -21,7 +21,6 @@ alias ka="killall" \
 	lla="ls -la" \
 	lt="ls --tree" \
 	duns="waltemplates.sh" \
-	dmen='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"' \
 	Spr="source ~/.profile" \
 	ls="ls --color=auto" \
 	dots="/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME" \
