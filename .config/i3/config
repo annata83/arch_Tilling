@@ -108,9 +108,8 @@ for_window [title="tmux"] move workspace $ws2
 #######################################
 # Hide scratchpad
 exec $nsi				scratchpad show
-# Wal
-#exec $nsi				wal -i /home/niko/.config/wall.png -st
-exec $nsi				setbg
+# Restore previous setup
+exec $nsi				ssRestore
 
 #######################################
 # #---Run at start  scrips---# #

@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/niko/.config/wall.png' 
+feh --no-fehbg --bg-scale '/home/niko/.config/wall.png' 

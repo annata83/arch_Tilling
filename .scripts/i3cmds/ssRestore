@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+feh --bg-scale ~/.config/wall.png
+wal -Rstn
+notify-send "Session bg & colors restore."
+

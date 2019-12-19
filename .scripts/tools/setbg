@@ -1,6 +1,4 @@
 #!/bin/sh
-#feh --bg-scale ~/.config/wall.png
-wal -c 
 wal -i ~/.config/wall.png -st
 # Sets the background. If given an argument, will set file as background.
 [ ! -z "$1" ] && cp "$1" ~/.config/wall.png && notify-send -i "$HOME/.config/wall.png" "Wallpaper set."
