@@ -27,7 +27,7 @@ monitor = eDP-1
 
 ; Size Position
 width = 100%
-height = 27
+height = 22
 radius = 0
 fixed-center = true
 
@@ -163,22 +163,31 @@ label = %time%
 
 [module/temperature]
 type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
 thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
 warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-#ramp-0 = 
-#ramp-1 = 
-#ramp-2 = 
-#ramp-foreground = ${colors.foreground-alt}
 
 [module/wlan]
 type = internal/network
@@ -186,7 +195,7 @@ interface =  wlo1
 interval = 3.0
 
 format-connected =<label-connected>
-label-connected = %essid%
+label-connected = %essid% 
 
 
 format-disconnected = <label-disconnected>
@@ -194,12 +203,12 @@ format-disconnected = <label-disconnected>
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
-#ramp-signal-0 = 
-#ramp-signal-1 = 
-#ramp-signal-2 = 
-#ramp-signal-3 = 
-#ramp-signal-4 = 
-#ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/updates-arch-combined]
 type = custom/script

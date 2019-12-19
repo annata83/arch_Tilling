@@ -1,6 +1,14 @@
 
 .cache/
 
+.config/configstore/
+
+.config/fontconfig/
+
+.npm-global/
+
+.npm/
+
 .config/spotify/
 
 .config/pulse/
@@ -45,6 +53,8 @@
 
 .viminfo
 
+.viminfo.tmp
+
 .Xauthority
 
 .task/
@@ -54,3 +64,8 @@
 .zcompdump
 
 Images/wall/
+
+Coding/
+
+Downloads/
+
