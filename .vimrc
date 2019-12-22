@@ -16,9 +16,11 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'digitaltoad/vim-pug'
 Plug 'chrisbra/Colorizer'
+Plug 'tpope/vim-obsession'
 call plug#end()
 
 " Basics
+set clipboard=unnamed,unnamedplus
 setlocal conceallevel=3
 set nocompatible
 filetype plugin on
@@ -36,7 +38,6 @@ set mouse=a
 set hlsearch
 " Press Space to turn off highlighting and clear any message already displayed.
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-set clipboard=unnamedplus
 syntax enable       " syntax highlighting on
 set cursorline			" Highlight cursor position
 set laststatus=2
@@ -54,6 +55,15 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+" Custom Maps
+
+" leader+xyy to copy inside visual mode
+vmap <leader>xyy :!xclip -f -sel clip<CR>
+" leader+xpp to paste
+map <leader>xpp mz:-1r !xclip -o -sel clip<CR>`z
+
+
+
 "Move bettwen buffers                   
 :nnoremap <C-m> :bnext<CR>  
 :nnoremap <C-b> :bprevious<CR>

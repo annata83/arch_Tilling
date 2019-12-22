@@ -9,6 +9,8 @@
 
 .npm/
 
+.tmux/
+
 .config/spotify/
 
 .config/pulse/
@@ -69,3 +71,4 @@ Coding/
 
 Downloads/
 
+Session.vim
