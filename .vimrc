@@ -62,8 +62,10 @@ vmap <leader>xyy :!xclip -f -sel clip<CR>
 " leader+xpp to paste
 map <leader>xpp mz:-1r !xclip -o -sel clip<CR>`z
 
-
-
+" FZF Buffers
+nnoremap <leader><space> :Buffers<CR>
+map <F5> :CocDisable<CR>
+map <F6> :CocEnable<CR>
 "Move bettwen buffers                   
 :nnoremap <C-m> :bnext<CR>  
 :nnoremap <C-b> :bprevious<CR>
