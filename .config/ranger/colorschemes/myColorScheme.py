@@ -32,7 +32,7 @@ class ColorScheme(ColorScheme):
                 fg = 1
             if context.directory:
                 attr |= normal
-                fg = 3
+                fg = 240
             elif context.executable and not \
                     any((context.media, context.container,
                        context.fifo, context.socket)):
@@ -70,12 +70,12 @@ class ColorScheme(ColorScheme):
         elif context.in_titlebar:
             attr |= bold
             if context.hostname:
-                fg = context.bad and 1 or 5
+                fg = context.bad and 1 or 253
             elif context.directory:
-                fg = 5
+                fg = 253
             elif context.tab:
                 if context.good:
-                    bg = 2
+                    bg = 240
 
         elif context.in_statusbar:
             if context.permissions:
