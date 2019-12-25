@@ -15,6 +15,7 @@ export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 # Fuzzy Finder Options to use Bat and previews with syntax-highlithing.
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
+
 # less/man colors
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"; a="${a%_}"
@@ -24,6 +25,10 @@ export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"; a="${a%_}"
 export LESS_TERMCAP_se="$(printf '%b' '[0m')"; a="${a%_}"
 export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"; a="${a%_}"
 export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
+
+
+# Fix LS_COLORS being unreadable.
+export LS_COLORS="${LS_COLORS}:su=30;41:ow=30;42:st=30;44:"
 
 # Start graphical server if i3 not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
