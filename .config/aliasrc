@@ -13,20 +13,32 @@ alias ka="killall" \
 	ccat="highlight --out-format=ansi" \
 	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
 	yta="yt -x -f bestaudio/best" \
-	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
 	lsp="pacman -Qett --color=always | less" \
 	ffmpeg="ffmpeg -hide_banner" \
 	l="ls -l" \
 	la="ls -a" \
 	lla="ls -la" \
-	lt="ls --tree" \
 	duns="waltemplates.sh" \
 	Spr="source ~/.profile" \
 	ls="ls --color=auto" \
-	dots="/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME" \
+
 	dettach="</dev/null &>/dev/null &" \
 	wall="cd /home/niko/Images/wall &&  fzfimg --bind 'enter:execute-silent(wal -i {} -st)'"
-#command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
+
+# TaskWarrior Aliases & Functions
+
+function taskProjects() {
+	task project:$1
+}
+
+alias	t="task"\
+	tw="ls ~/.task/*.data | entr -d task"\
+	tday="task burndown.daily && echo ~/.task/backlog.data | entr -d task burndown.daily"\
+	tp="taskProjects"\
+	tpl="task projects"\
+	tl="task list"\
+
+# command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 
 shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}
 se() { du -a ~/.scripts/* ~/.config/* | awk '{print $2}' | fzf | xargs  -r $EDITOR ;}
