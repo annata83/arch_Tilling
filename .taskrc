@@ -1,18 +1,20 @@
 # [Created by task 2.5.1 10/28/2019 14:45:23]
-# Taskwarrior program configuration file.
-# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
-# 'man task-sync' or 'man taskrc'
-
-# Here is an example of entries that use the default, override and blank values
-#   variable=foo   -- By specifying a value, this overrides the default
-#   variable=      -- By specifying no value, this means no default
-#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
-
-# Use the command 'task show' to see all defaults and overrides
-
 # Files
 data.location=~/.task
 color=on
+
+color.uda.priority.H=color255
+color.uda.priority.L=color245
+color.uda.priority.M=color250
+
+uda.priority.values=H,M,,L,
+
+urgency.uda.priority.H.coefficient=6.0
+urgency.uda.priority.L.coefficient=0
+urgency.uda.priority..coefficient=1.8
+urgency.uda.priority.M.coefficient=3.9
+
+
 
 # Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme
