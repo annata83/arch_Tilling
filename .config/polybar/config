@@ -212,7 +212,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/updates-arch-combined]
 type = custom/script
-exec = ~/.scripts/polybar/updates-arch-combined.sh
+exec = ~/.scripts/apps/polybar/updates-arch-combined.sh
 interval = 600
 
 #format-prefix = 
