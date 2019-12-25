@@ -134,9 +134,9 @@ exec $nsi				unclutter
 # start kitty dropdown scratchpad
 exec $nsi urxvt -name dropdown  
 # start Tmux in workspace 2 
-exec $nsi	$term -e tmux
+exec $nsi	$term -e tmux new-session -A -s Main
 # start ranger in work 3
-exec $nsi "sh -c 'sleep 5; $term -e $FILE'"
+exec $nsi "sh -c 'sleep 3; $term -e $FILE'"
 # start Help Menu in  scratchpad
 #exec $nsi $ayuda
 # Start Polybar
