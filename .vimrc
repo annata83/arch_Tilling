@@ -108,7 +108,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'seoul256',
+			\ 'colorscheme': 'materia',
       \ }
 
 " FZF Keymaps
