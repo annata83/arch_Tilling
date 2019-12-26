@@ -67,7 +67,7 @@ nnoremap <leader><space> :Buffers<CR>
 map <F5> :CocDisable<CR>
 map <F6> :CocEnable<CR>
 "Move bettwen buffers                   
-:nnoremap <C-m> :bnext<CR>  
+:nnoremap <C-n> :bnext<CR>  
 :nnoremap <C-b> :bprevious<CR>
 " Commands ran automatically on certain events
 augroup autos
@@ -116,7 +116,7 @@ nnoremap <silent> <leader>f :FZF/<cr>
 nnoremap <silent> <leader>h :FZF~<cr>
 
 " Nerd tree
-	map <C-n> :NERDTreeToggle<CR>
+	map <C-t> :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " nerdTree highlight
 let g:NERDTreeHighlightFolders = 1 " enables folder icon highlighting using exact match
