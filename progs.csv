@@ -5,7 +5,8 @@
 A,nerd-fonts-terminus,"Fonts for Terminal" 
 # Basic System blocks
 #A,tiger,"System Scan Utility"
-,xset,"User preference utility for X"
+,xsel,"XSel is a command-line program for getting and setting the contents of the X selection"
+,xclip,"Command line interface to the X11 clipboard"
 ,xf86-video-nouveau,"Open Source 3D acceleration driver for nVidia cards"
 ,mesa,"An open-source implementation of the OpenGL specification"
 ,xorg-server,"Graphical server."
