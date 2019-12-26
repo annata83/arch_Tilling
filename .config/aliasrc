@@ -37,6 +37,7 @@ alias	t="task"\
 	tp="taskProjects"\
 	tpl="task projects"\
 	tl="task list"\
+	tnw="task newest"\
 
 # command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 
