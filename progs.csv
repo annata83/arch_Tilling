@@ -24,6 +24,7 @@ A,nerd-fonts-terminus,"Fonts for Terminal"
 A,kitty,"A modern, hackable, featureful, OpenGL based terminal emulator"
 # Basic Desktop Functionality
 ,playerctl,"media player controller and lib for spotify, vlc, audacious, bmp, xmms2, and others."
+,trash-cli,"Command line interface to the freedesktop.org trashcan"
 ,htop,"system monitor"
 A,compton-tryone-git,"tryone's patched fork of compton with kawase blur"
 ,i3-gaps,"Window manager."
@@ -127,4 +128,4 @@ A,i3lock-fancy,"I3Lock with Blur and fancies"
 #,inxi,"Full featured CLI system information tool"
 #A,sublime-text-dev,"Sophisticated text editor for code, html and prose - dev build"
 #A,pacolog,"pacolog query recent commits  packages from both official repositories and the AUR"
-#,trash-cli,"Command line interface to the freedesktop.org trashcan"
+
