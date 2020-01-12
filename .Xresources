@@ -7,9 +7,6 @@ Xft.autohint:  false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-#include "/home/niko/.config/urxvt/urxvt.conf"
-
-! I3 colors
-!#include "/home/niko/.cache/wal/colors.Xresources"
-#include	"/.cache/wal/i3.walColor.conf
+#include	"/home/niko/.config/urxvt/urxvt.conf"
+#include	"/home/niko/.cache/wal/colors.Xresources"
 
