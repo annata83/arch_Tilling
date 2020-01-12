@@ -21,7 +21,7 @@ alias ka="killall" \
 	duns="waltemplates.sh" \
 	Spr="source ~/.profile" \
 	ls="ls --color=auto" \
-
+	reflect="sudo reflector --age 8 --fastest 128 --latest 64 --number 32 --sort rate --save /etc/pacman.d/mirrorlist"\
 	dettach="</dev/null &>/dev/null &" \
 	wall="cd /home/niko/Images/wall &&  fzfimg --bind 'enter:execute-silent(wal -i {} -st)'"
 
@@ -37,8 +37,7 @@ alias	t="task"\
 	tp="taskProjects"\
 	tpl="task projects"\
 	tl="task list"\
-	tnw="task newest"\
-
+	tnw="task newest"\ 
 # command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 
 shdl() { curl -O $(curl -s http://sci-hub.tw/"$@" | grep location.href | grep -o http.*pdf) ;}
