@@ -3,6 +3,16 @@
 
 .config/configstore/
 
+.config/cmus/
+
+.config/menus/
+
+.config.mimeapps.list
+
+.config/mps-youtube/
+
+.config/vlc/
+
 .config/fontconfig/
 
 .npm-global/
@@ -21,6 +31,8 @@
 
 .config/dconf/
 
+.config/htop/
+
 .config/coc/
 
 .config/chromium/
@@ -28,6 +40,8 @@
 .config/wall.png
 
 .config/ranger/colorschemes/
+
+.config/Thunar/
 
 .config/neofetch/
 
