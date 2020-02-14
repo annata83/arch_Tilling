@@ -36,5 +36,8 @@ export LS_COLORS="${LS_COLORS}:su=30;41:ow=30;42:st=30;44:"
 # Switch escape and caps if tty:
 sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
 
+# Ranger configuration 
+export RANGER_LOAD_DEFAULT_RC=FALSE 
+
 # "Fasd". This will setup a command hook that executes on every command and advanced tab completion for zsh and bash.
 #  eval "$(fasd --init auto)"
