@@ -49,3 +49,4 @@ autoload -Uz _zplugin
 zplugin ice pick"async.zsh" src"pure.zsh"
 zplugin light sindresorhus/pure
 
+
