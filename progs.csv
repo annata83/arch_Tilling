@@ -1,10 +1,16 @@
-#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
-# System Fonts
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+#: Info
+#: TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
+
+#: System Fonts {{{
 ,ttf-inconsolata,"Monospace font of I3."
 ,ttf-linux-libertine,"Sans and serif fonts for Linux."
-A,nerd-fonts-terminus,"Fonts for Terminal" 
-# Basic System blocks
-#A,tiger,"System Scan Utility"
+A,nerd-fonts-terminus,"Fonts for dunsta & Polybar" 
+A,adobe-source-code-pro-fonts,"Kitty Fonts"
+A,ttf-material-design-icons-git,"Material Design Icons Web Font"
+#: }}}
+
+#: Basic System block {{{
 ,xsel,"XSel is a command-line program for getting and setting the contents of the X selection"
 ,xclip,"Command line interface to the X11 clipboard"
 ,xf86-video-nouveau,"Open Source 3D acceleration driver for nVidia cards"
@@ -23,7 +29,9 @@ A,nerd-fonts-terminus,"Fonts for Terminal"
 ,bluez-utils,"Development and debugging utilities for the bluetooth protocol stack"
 ,rxvt-unicode-256xresources,"minimalTerminal experiences"
 A,kitty,"A modern, hackable, featureful, OpenGL based terminal emulator"
-# Basic Desktop Functionality
+#: }}}
+
+#: Basic Desktop Functionality {{{
 ,playerctl,"media player controller and lib for spotify, vlc, audacious, bmp, xmms2, and others."
 ,trash-cli,"Command line interface to the freedesktop.org trashcan"
 ,htop,"system monitor"
@@ -36,7 +44,12 @@ A,polybar,"A fast and easy-to-use status bar"
 A,unclutter-xfixes-git,"hides an inactive mouse."
 ,xcape,"gives the special escape/super mappings of LARBS."
 A,python-pywal,"colour scheme and wallpaper manipulation tool"
-# System tools
+A,redshift-minimal,"Adjusts the color temperature of your screen according to your surroundings, with minimal dependencies."
+,rsync,"most powerfull syncking tool"
+,rclone,"cloud framework for rsync"
+#: }}}
+
+#: System tools {{{
 ,zsh,"A very advanced and programmable command interpreter (shell) for UNIX"
 ,neofetch,"command-line system information tool"
 ,sed,"GNU stream editor"
@@ -53,7 +66,10 @@ A,python-pywal,"colour scheme and wallpaper manipulation tool"
 ,ripgrep,"A search tool that combines the usability of ag with the raw speed of grep"
 ,fd,"A simple, fast and user-friendly alternative to 'find'"
 ,dmenu,"runs commands and provides a UI for selection."
-# Basic Apps
+,gucharmap,"Gnome Unicode Charmap"
+#: }}}
+
+#: Basic Apps {{{
 ,firefox,"Standalone web browser from mozilla.org"
 ,chromium,"A web browser built for speed, simplicity, and security"
 ,ranger,"Terminal file manager."
@@ -69,26 +85,42 @@ A,python-pywal,"colour scheme and wallpaper manipulation tool"
 ,zathura-pdf-mupdf,"allows mupdf pdf compatibility in zathura."\
 ,task,"A command-line todo list manager"
 ,timew," Timewarrior is Free and Open Source Software that tracks time from the command line. "
-#A,joplin,"Joplin - a note taking and to-do application"
 ,cmus,"Small, fast and powerful console music player"
 A,spotify,"Music Streamming Service"
 A,curseradio-git,"Command line radio player"
 ,tig,"Text-mode interface for Git."
+A,sc-im,"A spreadsheet program based on SC"
+A,mps-youtube-git,"Terminal youtube streammer" 
+,newsboat,"is a terminal RSS client."
+# }}}
 
-# Build or clone direcly from git Manually after install
-# Zplugin
-#https://github.com/zdharma/zplugin
-# Tmux Pluing Manager
-#https://github.com/tmux-plugins/tpm 
-
-# Otrhers
+#: Others {{{
 ,nodejs,"Nodejs Plataform"
-#,man-db,"A utility for reading man pages"
-#P,ueberzug,"alternative for w3mimgdisplay "
 A,i3lock-fancy,"I3Lock with Blur and fancies"
 ,rofi,"A window switcher, application launcher and dmenu replacement"
+#: }}}
+
+#: Build or clone direcly from git Manually after install {{{
+#:	Zplugin
+#:		https://github.com/zdharma/zplugin
+#:	Tmux Pluing Manager
+#:		https://github.com/tmux-plugins/tpm 
+#: }}}
+
+#: NPM Packages {{{
 #N,jshint," a tool that helps to detect errors and potential problems in your JavaScript code."
 #N,joplin,"An open source note taking and to-do application with synchronisation capabilities."
+#N,md-fileserver,"Locally view markdown files in a browser."
+#N,download-size,"get download size for npm packages"
+#: }}}
+
+#: PIP Packages {{{
+
+#: }}}
+
+#: Uninstalled; maybe will reinitall later {{{
+#P,ueberzug,"alternative for w3mimgdisplay "
+#,man-db,"A utility for reading man pages"
 #P,pycrypto,"Cryto library to encrypt jrnl app"
 #P,jrnl"[encrypted]","Collect your thoughts and notes without leaving the command line."
 ### Unused for now  
@@ -102,7 +134,6 @@ A,i3lock-fancy,"I3Lock with Blur and fancies"
 #,exfat-utils,"allows management of FAT drives."
 #A,gtk-theme-arc-gruvbox-git,"gives the dark GTK theme."
 #,i3lock,"is the screen lock."
-#,newsboat,"is a terminal RSS client."
 #,ntfs-3g,"allows accessing NTFS partitions."
 #,pulseaudio-alsa,"is an audio interface with ALSA."
 #A,sc-im,"is an Excel-like terminal spreadsheet manager."
@@ -129,4 +160,5 @@ A,i3lock-fancy,"I3Lock with Blur and fancies"
 #,inxi,"Full featured CLI system information tool"
 #A,sublime-text-dev,"Sophisticated text editor for code, html and prose - dev build"
 #A,pacolog,"pacolog query recent commits  packages from both official repositories and the AUR"
-
+#A,tiger,"System Scan Utility"
+#: }}}
