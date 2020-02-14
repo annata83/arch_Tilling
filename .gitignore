@@ -30,6 +30,8 @@ GPUCache/
 
 .tmux/
 
+.config/rclone/
+
 .config/spotify/
 
 .config/joplin/
