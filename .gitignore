@@ -58,6 +58,8 @@ GPUCache/
 
 .gitkraken/
 
+.gitconfig
+
 .gnupg/
 
 .kodi/
@@ -71,6 +73,8 @@ GPUCache/
 .vim/
 
 .surf/
+
+.sc-iminfo
 
 .timewarrior/
 
