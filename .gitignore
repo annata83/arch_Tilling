@@ -1,5 +1,13 @@
 Audio/
 
+Sandbox/
+
+GPUCache/
+
+.gnome/
+
+.newsboat/
+
 .cache/
 
 .config/configstore/
@@ -8,7 +16,7 @@ Audio/
 
 .config/menus/
 
-.config.mimeapps.list
+.config/mimeapps.list
 
 .config/mps-youtube/
 
