@@ -69,6 +69,11 @@ map <F6> :CocEnable<CR>
 "Move bettwen buffers                   
 :nnoremap <C-n> :bnext<CR>  
 :nnoremap <C-b> :bprevious<CR>
+
+" Colorized
+map <leader>c :ColorToogle<CR>
+
+
 " Commands ran automatically on certain events
 augroup autos
 	autocmd!
@@ -108,7 +113,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Lightline
 let g:lightline = {
-			\ 'colorscheme': 'materia',
+			\ 'colorscheme': 'seoul256',
       \ }
 
 " FZF Keymaps
@@ -164,3 +169,4 @@ endfunction
 
 " css-colors Plugin
 let g:cssColorVimDoNotMessMyUpdatetime = 1
+let g:colorizer_auto_color = 1
