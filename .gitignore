@@ -96,10 +96,18 @@ GPUCache/
 
 .zcompdump
 
+.lesshst
+
+.viminfz.tmp
+
+set-rclone-password
+
 Images/wall/
 
 Coding/
 
 Downloads/
+
+Desktop/
 
 Session.vim
