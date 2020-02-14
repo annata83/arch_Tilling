@@ -1,0 +1,12 @@
+set -goq @powerline-color-main-1 "{color1}"
+set -goq @powerline-color-main-2 "{color2}"
+set -goq @powerline-color-main-3 "{color3}"
+set -goq @powerline-color-black-1 black
+set -goq @powerline-color-grey-1 "{color4}"
+set -goq @powerline-color-grey-2 "{color5}"
+set -goq @powerline-color-grey-3 "{color6}"
+set -goq @powerline-color-grey-4 "{color7}"
+set -goq @powerline-color-grey-5 "{color8}"
+set -goq @powerline-color-grey-6 "{color9}"
+
+
