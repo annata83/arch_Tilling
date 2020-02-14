@@ -22,8 +22,8 @@ urgency.uda.priority.M.coefficient=3.9
 #include /usr/share/doc/task/rc/dark-16.theme
 #include /usr/share/doc/task/rc/dark-256.theme
 #include /usr/share/doc/task/rc/dark-red-256.theme
-#include /usr/share/doc/task/rc/dark-green-256.theme
-include /usr/share/doc/task/rc/dark-blue-256.theme
+include /usr/share/doc/task/rc/dark-green-256.theme
+#include /usr/share/doc/task/rc/dark-blue-256.theme
 #include /usr/share/doc/task/rc/dark-violets-256.theme
 #include /usr/share/doc/task/rc/dark-yellow-green.theme
 #include /usr/share/doc/task/rc/dark-gray-256.theme
@@ -33,4 +33,41 @@ include /usr/share/doc/task/rc/dark-blue-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
 # Custom Theme
+
+
+# Reports:
+report.monwait.columns=id,start.active,project,tags,wait,wait.remaining,due,until,description
+report.monwait.description=tasks sorted by due date ascending
+report.monwait.filter=wait:mon
+
+report.tuewait.columns=id,start.active,project,tags,wait,wait.remaining,due,until,description
+report.tuewait.description=tasks sorted by due date ascending
+report.tuewait.filter=wait:tue
+
+report.wedwait.columns=id,start.active,project,tags,wait,wait.remaining,due,until,description
+report.wedwait.description=tasks sorted by due date ascending
+report.wedwait.filter=wait:wed
+
+report.thuwait.columns=id,start.active,project,tags,wait,wait.remaining,due,until,description
+report.thuwait.description=tasks sorted by due date ascending
+report.thuwait.filter=wait:thu
+
+report.friwait.columns=id,start.active,project,tags,wait,wait.remaining,due,until,description
+report.friwait.description=tasks sorted by due date ascending
+report.friwait.filter=wait:fri
+
+report.satwait.columns=id,start.active,project,tags,wait,wait.remaining,due,until,description
+report.satwait.description=tasks sorted by due date ascending
+report.satwait.filter=wait:sat
+
+report.sunwait.columns=id,start.active,project,tags,wait,wait.remaining,due,until,description
+report.sunwait.description=tasks sorted by due date ascending
+report.sunwait.filter=wait:sun
+
 #include ~/.cache/wal/templates/myTaskcustom.theme
+uda.reviewed.type=date
+uda.reviewed.label=Reviewed
+report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns=uuid
+report._reviewed.sort=reviewed+,modified+
+report._reviewed.filter=( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )
