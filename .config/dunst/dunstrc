@@ -9,10 +9,10 @@
     alignment = left
     bounce_freq = 5
     show_age_threshold = 60
-    word_wrap = no
+    word_wrap = yes
     ignore_newline = no
-    geometry = "500x4-25+25"
-    width = 50, 500 #  min, max, respectively
+    geometry = "0x4-25+25"
+    width = 500, 500 #  min, max, respectively
     shrink = no
     transparency = 5
     idle_threshold = 120 
