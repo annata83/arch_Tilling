@@ -76,6 +76,8 @@ GPUCache/
 
 .sc-iminfo
 
+.scrpts/apps/taskwarrior/
+
 .timewarrior/
 
 .zplugin/
