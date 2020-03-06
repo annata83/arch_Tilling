@@ -48,7 +48,7 @@ font-3 = "Weather Icons:size=12;1"
 #: Modules Positioning {{{
 modules-left = i3 
 modules-center = 
-modules-right =	openweather networkspeeddown networkspeedup redshift temperature temperature3 memory cpu battery pulseaudio bluetoothctl 				trash updates-arch-combined wlan
+modules-right =	networkspeeddown networkspeedup redshift temperature temperature3 memory cpu battery pulseaudio bluetoothctl 				trash updates-arch-combined wlan
 #: }}}
 
 #: Tray {{{
@@ -397,13 +397,6 @@ ramp-volume-2 = "V"
 ramp-volume-foreground = ${colors.foreground-alt}
 ramp-volume-background = ${colors.background}
 #: }}}
-#: Open Weather {{{
-[module/openweather]
-type = custom/script
-exec = ~/.scripts/apps/polybar/openweathermap-fullfeatured/openweathermap-fullfeatured.sh
-interval = 600
-label-font = 3
-#: }}}
 #: Bluetooth {{{
 [module/bluetoothctl]
 type = custom/script
@@ -433,6 +426,13 @@ format-disconnected =
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+#: }}}
+#: Open Weather {{{
+[module/openweather]
+type = custom/script
+exec = ~/.scripts/apps/polybar/openweathermap-fullfeatured/openweathermap-fullfeatured.sh
+interval = 600
+label-font = 3
 #: }}}
 #: Date {{{ 
 [module/date-icon]
