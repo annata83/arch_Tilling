@@ -5,7 +5,8 @@ alias ka="killall" \
 	SS="sudo systemctl" \
 	g="git" \
 	e="$EDITOR" \
-	v="$EDITOR -S Session.vim --servername "desktop2"" \
+	vm="$EDITOR -S main.vim --servername "main"" \
+	vc="$EDITOR -S coding.vim --servername "coding"" \
 	vl="vim --serverlist" \
 	x="sxiv -ft *" \
 	grep="grep --color=auto" \
